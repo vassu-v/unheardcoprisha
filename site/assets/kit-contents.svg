@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" role="img"
+     aria-labelledby="kitTitle kitDesc" class="kitfig">
+  <title id="kitTitle">The UNHEARD kit, laid out flat</title>
+  <desc id="kitDesc">A drawn top-down view of the kit contents: a fanned stack of
+  activity cards edge-banded by learning model, an observation sheet with two fields
+  filled in by hand, an eight-week progress tracker part-marked, the activity guide
+  booklet, a sensory tool pack, a sticker sheet, and a pen resting alongside.</desc>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       DRAWN, NOT PHOTOGRAPHED.
+       Inlined into the page (never <img>) so it inherits the page's
+       CSS custom properties and re-themes inside .on-night with no
+       variant. Colour is applied via classes in kit.css, because
+       var() is invalid inside SVG presentation attributes.
+
+       Placeholder for real product photography (README, "Assets
+       still wanted"). Deliberately illustrative rather than
+       photoreal: a fake photograph of a product a buyer cannot see
+       would be a claim the page cannot demonstrate (BRAND.md §7).
+       ══════════════════════════════════════════════════════════════ -->
+
+  <defs>
+    <pattern id="kitMotif" width="26" height="26" patternUnits="userSpaceOnUse">
+      <line class="kf-motif" x1="5" y1="9"  x2="21" y2="9"  stroke-width="1.4" stroke-linecap="round"/>
+      <line class="kf-motif" x1="5" y1="15" x2="21" y2="15" stroke-width="1.4" stroke-linecap="round"/>
+    </pattern>
+    <filter id="kitDrop" x="-25%" y="-25%" width="150%" height="165%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#3C2A50" flood-opacity="0.13"/>
+    </filter>
+    <filter id="kitDropSoft" x="-25%" y="-25%" width="150%" height="165%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#3C2A50" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <!-- ── 1. ACTIVITY CARD STACK ─────────────────────────────────────
+       BRAND.md §8: each learning model takes one system hue as a 4mm
+       edge band, so a parent can sort cards by feel and sight. The
+       band is a legend, not decoration. -->
+  <g filter="url(#kitDropSoft)">
+    <g transform="rotate(-8 190 250)">
+      <rect class="kf-sheet" x="92" y="150" width="196" height="252" rx="10"/>
+      <rect x="92" y="150" width="196" height="252" rx="10" fill="url(#kitMotif)"/>
+      <rect class="kf-band-grow" x="92" y="150" width="196" height="9"/>
+    </g>
+    <g transform="rotate(-3.5 200 255)">
+      <rect class="kf-sheet" x="106" y="146" width="196" height="252" rx="10"/>
+      <rect x="106" y="146" width="196" height="252" rx="10" fill="url(#kitMotif)"/>
+      <rect class="kf-band-support" x="106" y="146" width="196" height="9"/>
+    </g>
+  </g>
+
+  <!-- top card, face up: a real activity, legible -->
+  <g filter="url(#kitDrop)" transform="rotate(1.2 214 262)">
+    <rect class="kf-sheet" x="120" y="140" width="200" height="258" rx="10"/>
+    <rect class="kf-band-discover" x="120" y="140" width="200" height="9"/>
+    <text class="kf-mono"  x="142" y="182" font-size="11" letter-spacing="1.6">ACTIVITY 07</text>
+    <text class="kf-title" x="142" y="216" font-size="23">Build it</text>
+    <text class="kf-title" x="142" y="243" font-size="23">twice</text>
+    <text class="kf-soft"  x="142" y="279" font-size="12.5">Same tower, second</text>
+    <text class="kf-soft"  x="142" y="297" font-size="12.5">time from memory.</text>
+    <line class="kf-rule"  x1="142" y1="318" x2="300" y2="318"/>
+    <text class="kf-mono"  x="142" y="341" font-size="10" letter-spacing="1.2">WATCH FOR</text>
+    <text class="kf-body"  x="142" y="361" font-size="12.5">What they do when</text>
+    <text class="kf-body"  x="142" y="378" font-size="12.5">it falls.</text>
+  </g>
+
+  <!-- ── 2. OBSERVATION SHEET — the hero object of the box ──────────
+       BRAND.md §8: "it must be the best-made thing in the box."
+       Ruled in ground.edge, mono field labels, shown IN USE. -->
+  <g filter="url(#kitDrop)" transform="rotate(-1.6 500 290)">
+    <rect class="kf-sheet" x="366" y="104" width="272" height="332" rx="8"/>
+    <text class="kf-mono" x="392" y="140" font-size="10.5" letter-spacing="1.6">OBSERVATION SHEET</text>
+    <line class="kf-rule-strong" x1="392" y1="152" x2="612" y2="152"/>
+
+    <g class="kf-mono" font-size="9" letter-spacing="1.1">
+      <text x="392" y="180">REACHED FOR FIRST</text>
+      <text x="392" y="234">AVOIDED</text>
+      <text x="392" y="288">STOPPED AFTER</text>
+      <text x="392" y="342">SAID WHILE DOING IT</text>
+    </g>
+    <g class="kf-rule">
+      <line x1="392" y1="204" x2="612" y2="204"/>
+      <line x1="392" y1="258" x2="612" y2="258"/>
+      <line x1="392" y1="312" x2="612" y2="312"/>
+      <line x1="392" y1="366" x2="612" y2="366"/>
+      <line x1="392" y1="392" x2="612" y2="392"/>
+    </g>
+
+    <!-- filled in the parent's own hand: a sheet in use, not a blank -->
+    <text class="kf-hand" x="396" y="200" font-size="19">the blocks, again</text>
+    <text class="kf-hand" x="396" y="308" font-size="19">22 minutes</text>
+
+    <g transform="translate(590,170)">
+      <rect class="kf-box" width="15" height="15" rx="3"/>
+      <path class="kf-tick" d="M3.4 7.8 6.6 11 12 4.4"/>
+    </g>
+    <g transform="translate(590,278)">
+      <rect class="kf-box" width="15" height="15" rx="3"/>
+      <path class="kf-tick" d="M3.4 7.8 6.6 11 12 4.4"/>
+    </g>
+
+    <!-- the one Signal pixel on this figure: today -->
+    <circle class="kf-today" cx="602" cy="134" r="4"/>
+  </g>
+
+  <!-- ── 3. PROGRESS TRACKER — eight weeks on one page ──────────────
+       Not a chart, and deliberately not a streak: a ruled grid the
+       parent marks by hand, so change is visible rather than
+       remembered. Weeks not yet reached stay drawn but empty. -->
+  <g filter="url(#kitDrop)" transform="rotate(2.4 800 232)">
+    <rect class="kf-sheet" x="672" y="124" width="250" height="218" rx="8"/>
+    <text class="kf-mono" x="696" y="154" font-size="10.5" letter-spacing="1.6">EIGHT WEEKS</text>
+
+    <g class="kf-mono" font-size="8" text-anchor="middle">
+      <text x="708" y="176">1</text><text x="736" y="176">2</text>
+      <text x="764" y="176">3</text><text x="792" y="176">4</text>
+      <text x="820" y="176">5</text><text x="848" y="176">6</text>
+      <text x="876" y="176">7</text><text x="904" y="176">8</text>
+    </g>
+
+    <g class="kf-rule">
+      <line x1="696" y1="198" x2="914" y2="198"/>
+      <line x1="696" y1="234" x2="914" y2="234"/>
+      <line x1="696" y1="270" x2="914" y2="270"/>
+      <line x1="696" y1="306" x2="914" y2="306"/>
+    </g>
+
+    <g>
+      <rect class="kf-m-observe"  x="702" y="186" width="12" height="10" rx="2"/>
+      <rect class="kf-m-observe"  x="730" y="186" width="12" height="10" rx="2"/>
+      <rect class="kf-m-observe"  x="758" y="186" width="12" height="10" rx="2"/>
+      <rect class="kf-m-discover" x="702" y="222" width="12" height="10" rx="2"/>
+      <rect class="kf-m-discover" x="730" y="222" width="12" height="10" rx="2"/>
+      <rect class="kf-m-support"  x="702" y="258" width="12" height="10" rx="2"/>
+      <rect class="kf-m-support"  x="730" y="258" width="12" height="10" rx="2"/>
+      <rect class="kf-m-support"  x="758" y="258" width="12" height="10" rx="2"/>
+      <rect class="kf-m-grow"     x="702" y="294" width="12" height="10" rx="2"/>
+    </g>
+
+    <!-- an empty field is an invitation, not an error (BRAND.md §8) -->
+    <g class="kf-m-empty">
+      <rect x="786" y="186" width="12" height="10" rx="2"/>
+      <rect x="814" y="186" width="12" height="10" rx="2"/>
+      <rect x="758" y="222" width="12" height="10" rx="2"/>
+      <rect x="786" y="222" width="12" height="10" rx="2"/>
+      <rect x="786" y="258" width="12" height="10" rx="2"/>
+      <rect x="730" y="294" width="12" height="10" rx="2"/>
+      <rect x="758" y="294" width="12" height="10" rx="2"/>
+    </g>
+  </g>
+
+  <!-- ── 4. ACTIVITY GUIDE BOOKLET — board cover, blind-embossed mark -->
+  <g filter="url(#kitDrop)" transform="rotate(-3.2 268 512)">
+    <rect class="kf-board" x="150" y="428" width="238" height="172" rx="9"/>
+    <rect class="kf-spine" x="150" y="428" width="15" height="172" rx="9"/>
+    <rect class="kf-spine-l" x="163" y="428" width="3" height="172"/>
+
+    <!-- the mark: two rules, one stroke rising above them -->
+    <g class="kf-emboss" transform="translate(198,470)">
+      <path class="kf-emboss-rules" d="M0 22h58M0 34h58" stroke-width="1.6" stroke-linecap="round"/>
+      <path class="kf-emboss-mark" d="M6 34c10.6 0 9-32.6 20.8-32.6S36.7 23.4 47 23.4"
+            stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text class="kf-mono" x="198" y="552" font-size="10" letter-spacing="2.2">ACTIVITY GUIDE</text>
+    <text class="kf-mono" x="198" y="572" font-size="10" letter-spacing="2.2">45 ACTIVITIES</text>
+  </g>
+
+  <!-- ── 5. SENSORY TOOL PACK — textures and weights, drawn as objects -->
+  <g filter="url(#kitDropSoft)" transform="rotate(2 486 522)">
+    <rect class="kf-sheet" x="412" y="452" width="152" height="150" rx="12"/>
+    <text class="kf-mono" x="432" y="480" font-size="9.5" letter-spacing="1.4">SENSORY</text>
+
+    <circle class="kf-disc"      cx="458" cy="526" r="23"/>
+    <circle class="kf-disc-thin" cx="458" cy="526" r="14"/>
+    <circle class="kf-disc-fill" cx="458" cy="526" r="6"/>
+
+    <rect class="kf-weight" x="502" y="504" width="42" height="42" rx="7"/>
+    <g class="kf-weight-l">
+      <line x1="510" y1="516" x2="536" y2="516" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="510" y1="526" x2="536" y2="526" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="510" y1="536" x2="528" y2="536" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+
+    <path class="kf-cord" d="M432 572c14-13 30 9 44-3s28 6 44-6"/>
+  </g>
+
+  <!-- ── 6. STICKER SHEET — for the child, and only the child.
+       No score, no streak, no level: drawn marks, never emoji. ───── -->
+  <g filter="url(#kitDropSoft)" transform="rotate(-2.6 726 514)">
+    <rect class="kf-sheet" x="606" y="448" width="242" height="158" rx="8"/>
+    <text class="kf-mono" x="628" y="476" font-size="9.5" letter-spacing="1.4">FOR THE CHILD</text>
+
+    <g class="kf-perf">
+      <line x1="688" y1="488" x2="688" y2="594"/>
+      <line x1="768" y1="488" x2="768" y2="594"/>
+      <line x1="618" y1="542" x2="838" y2="542"/>
+    </g>
+
+    <g class="kf-stickers">
+      <path class="kf-s-discover" d="M638 508c7 0 6-16 12-16s6 11 12 11"/>
+      <path class="kf-s-grow"     d="M710 514l7 7 13-15"/>
+      <circle class="kf-s-support" cx="802" cy="514" r="11"/>
+      <path class="kf-s-soothe"   d="M638 564h28M638 574h20"/>
+      <path class="kf-s-signal"   d="M718 559l8 16-16 0z"/>
+      <path class="kf-s-observe"  d="M791 568h22M802 557v22"/>
+    </g>
+  </g>
+
+  <!-- ── 7. THE PEN. It rests, because the parent is not writing yet. -->
+  <g filter="url(#kitDropSoft)" transform="rotate(-16 330 622)">
+    <rect class="kf-pen" x="238" y="614" width="196" height="13" rx="6.5"/>
+    <path class="kf-pen" d="M434 614.6c9 1.6 15 4.4 15 6.4s-6 4.8-15 6.4z"/>
+    <rect class="kf-pen-band" x="262" y="614" width="4" height="13"/>
+  </g>
+</svg>

@@ -1,0 +1,156 @@
+/* ══════════════════════════════════════════════════════════════════
+   UNHEARD — TOKENS
+   Every colour, size, easing and font lives here. Nothing else holds
+   a literal value. See BRAND.md §5 and DESIGN-BRIEF.md Phase 4.
+
+   PREMIUM REVISION. Three things changed and each has a reason:
+     1. GROUND is near-white with a lavender cast, not tinted paper.
+        Premium comes from near-white surfaces + air, not from a
+        coloured ground.
+     2. ONE hue leads (lavender). Green is narrow and semantic
+        (verified / confirmed only). Six competing accents was the
+        single biggest reason the previous build read craft-fair
+        rather than premium.
+     3. Display type is Archivo 800 at large size with tight negative
+        tracking and line-height BELOW 1. Measured from the reference
+        build: 103px / -3.94px / 0.92.
+
+   CONTRAST: every hue has fill / text / night, and they are NOT
+   interchangeable. Text values are solved against --g-sunken, the
+   darkest light ground, so one token is safe on every light surface.
+   ══════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── GROUND — near-white, faint lavender cast ─────────────── */
+  --g-base:    #FAF9FC;
+  --g-lifted:  #FFFFFF;   /* cards are pure white: crisp, not tinted */
+  --g-sunken:  #F1EFF7;
+  --g-edge:    #E4E0EE;   /* hairline. Depth comes from this, not shadow */
+
+  /* ── INK ──────────────────────────────────────────────────── */
+  --ink:        #17161B;  /* headlines            15.79:1 on sunken */
+  --ink-body:   #3D3A47;  /* body copy             9.73:1 */
+  --ink-soft:   #6A6578;  /* secondary             4.92:1 */
+  --ink-faint:  #6A6578;  /* labels + small mono   4.92:1 */
+  --ink-ghost:  #B6B1C4;  /* RULES + DISABLED ONLY. Never text. */
+
+  /* ── BRAND — lavender leads ───────────────────────────────── */
+  --brand:        #6D3EE8;   /* vibrant violet */
+  --brand-text:   #6D3EE8;   /* 5.26:1 on sunken, no darkening needed */
+  --brand-night:  #916DEE;
+  --brand-soft:   #EDE7FE;
+  --on-brand:     #FFFFFF;   /* 5.99:1 */
+
+  /* ── GREEN — narrow and semantic: verified / confirmed ────── */
+  --grow:        #12A366;   /* vibrant emerald */
+  --grow-text:   #0E7D4E;   /* 4.54:1 on sunken. The FILL fails as text. */
+  --grow-night:  #12A366;
+  --grow-soft:   #E0F6EC;
+  --on-grow:     var(--ink); /* 5.53:1. White on emerald is only 3.25. */
+
+  /* ── AMBER — the lift ─────────────────────────────────────
+     A third accent used as a SPLASH, never as a system colour.
+     Violet leads, emerald confirms, amber lifts: it marks the
+     warm human moments (a child's own work, a free thing, a
+     highlight worth noticing). Sparing by rule, see BRAND.md. */
+  --lift:        #FF8A2B;
+  --lift-text:   #B35000;   /* 4.53:1 on sunken. The FILL fails as text. */
+  --lift-night:  #FF8A2B;
+  --lift-soft:   #FFF0E0;
+  --on-lift:     var(--ink); /* 7.65:1 */
+
+  /* ── STAGE HUES ───────────────────────────────────────────
+     Demoted deliberately. These now colour small dots and labels
+     in the Activity Library legend ONLY. They no longer paint
+     rails, bands or whole sections. Colour still carries
+     information; it stopped carrying decoration.
+     ─────────────────────────────────────────────────────────── */
+  --s-observe:  #4A4655;
+  --s-body:     #12A366;   /* green mixed through the legend, not only lavender */
+  --s-think:    #3F63C4;
+  --s-feel:     #6D3EE8;
+  --s-lang:     #B35000;
+
+  /* ── NIGHT ────────────────────────────────────────────────── */
+  --n-base:   #141318;
+  --n-lifted: #1E1C24;
+  --n-ink:    #F4F2F8;    /* 16.64:1 */
+  --n-soft:   #878295;    /* 4.54:1 on lifted */
+  --n-edge:   #2C2934;
+
+  /* ── TYPE ─────────────────────────────────────────────────── */
+  --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* Display sizes are large and tightly tracked. Line-height below 1
+     on the largest size is the premium signal, not a typo. */
+  --t-d1:   clamp(2.6rem, 5.1vw, 4.35rem);
+  --t-d2:   clamp(1.8rem, 3.2vw, 2.7rem);
+  --t-d3:   1.1875rem;
+  --t-body: 1rem;
+  --t-long: 1.0625rem;
+  --t-mono: 0.75rem;
+
+  --lh-d1: 0.94;
+  --lh-d2: 1.02;
+
+  --track-d1:   -0.038em;
+  --track-d2:   -0.028em;
+  --track-mono:  0.08em;
+
+  /* ── SPACE ────────────────────────────────────────────────── */
+  --s-1: 0.25rem;  --s-2: 0.5rem;   --s-3: 0.75rem;  --s-4: 1rem;
+  --s-5: 1.5rem;   --s-6: 2rem;     --s-7: 3rem;     --s-8: 4.5rem;
+  --s-9: 6.25rem;  --s-10: 9rem;
+
+  --measure: 62ch;
+  --shell:   1180px;
+  --shell-wide: 1340px;
+
+  /* ── RADIUS ───────────────────────────────────────────────── */
+  --r-sm:   8px;
+  --r-md:   16px;    /* cards, matching the reference build */
+  --r-lg:   24px;    /* large panels */
+  --r-pill: 100px;   /* buttons are fully round */
+
+  /* ── SHADOW — ambient and soft, never a hard drop ─────────── */
+  --sh-1: 0 1px 2px rgba(23, 22, 27, 0.04);
+  --sh-2: 0 4px 16px -4px rgba(23, 22, 27, 0.06);
+  --sh-3: 0 12px 32px -10px rgba(23, 22, 27, 0.10);
+  --sh-4: 0 28px 60px -20px rgba(23, 22, 27, 0.16);
+  --sh-btn: 0 8px 30px rgba(40, 30, 70, 0.10);
+  --sh-brand: 0 10px 34px -8px rgba(109, 62, 232, 0.38);
+  --sh-grow:  0 10px 34px -8px rgba(18, 163, 102, 0.32);
+  --sh-lift:  0 10px 34px -8px rgba(255, 138, 43, 0.38);
+
+  /* ── MOTION ───────────────────────────────────────────────── */
+  --ease:  cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 0.18s;  --dur-2: 0.34s;  --dur-3: 0.6s;
+  /* FORBIDDEN: linear, ease-in-out. The bouncy spring curve is gone
+     too — overshoot reads playful, and playful is not premium. */
+}
+
+/* ── NIGHT CONTEXT ──────────────────────────────────────────
+   Re-points the SAME token names, so any component dropped
+   inside adapts with no variant classes.
+   ─────────────────────────────────────────────────────────── */
+.on-night {
+  --g-base:   var(--n-base);
+  --g-lifted: var(--n-lifted);
+  --g-sunken: #191720;
+  --g-edge:   var(--n-edge);
+
+  --ink:       var(--n-ink);
+  --ink-body:  #D9D5E4;
+  --ink-soft:  var(--n-soft);
+  --ink-faint: var(--n-soft);
+  --ink-ghost: #4A4655;
+
+  --brand-text: var(--brand-night);
+  --grow-text:  var(--grow-night);
+  --brand-soft: rgba(109, 62, 232, 0.22);
+  --grow-soft:  rgba(18, 163, 102, 0.20);
+  --lift-text:  var(--lift-night);
+  --lift-soft:  rgba(255, 138, 43, 0.20);
+}

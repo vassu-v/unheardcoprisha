@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activity Library | UNHEARD</title>
+<meta name="description" content="45 sourced early-childhood activities from five global teaching models, adapted for Indian homes. Free, with every source linked.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/app.css">
+<link rel="stylesheet" href="/css/parts.css">
+<link rel="stylesheet" href="/css/material.css">
+<link rel="stylesheet" href="/css/library.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="shell nav__in">
+    <a class="brand" href="/" aria-label="UNHEARD home">
+      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="var(--ink)"/>
+        <path d="M7 14h18M7 20h18" stroke="var(--g-base)" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
+        <path d="M9.2 20c3.3 0 2.8-10.2 6.5-10.2s3.1 6.9 6.3 6.9" fill="none" stroke="var(--g-base)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand__name">UNHEARD</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="nav__links" id="navLinks">
+      <a href="/kit">The Kit</a>
+      <a href="/activities" aria-current="page">Activities</a>
+      <a href="/about">About</a>
+      <a class="btn btn--signal" href="/contact">Talk to us</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="libhero aura aura--lift">
+    <div class="shell libhero__grid">
+      <div>
+        <p class="slug slug--lift">Free &middot; no sign-up &middot; every source linked</p>
+        <h1 class="d1" style="margin-bottom: var(--s-5); max-width: 11ch;">45 activities. Every source shown.</h1>
+        <p class="lede">Drawn from Montessori, Reggio Emilia, Singapore&rsquo;s national frameworks, Finland&rsquo;s ECEC, and Japan&rsquo;s Tokkatsu. Adapted for Indian homes and everyday objects.</p>
+        <p class="hero__proof" style="margin-top: var(--s-5)">
+          You do not need the kit to use any of these.
+        </p>
+      </div>
+
+      <!-- the five models as a live index, doubling as a legend -->
+      <aside class="libindex">
+        <div class="libindex__head">
+          <span class="mono">The library</span>
+          <span class="mono">45 total</span>
+        </div>
+        <ol class="libindex__list">
+          <li><a href="#g-montessori"><span class="libindex__n">01</span><span class="libindex__name">Montessori</span><span class="libindex__c">5</span></a></li>
+          <li><a href="#g-reggio"><span class="libindex__n">02</span><span class="libindex__name">Reggio Emilia</span><span class="libindex__c">5</span></a></li>
+          <li><a href="#g-singapore"><span class="libindex__n">03</span><span class="libindex__name">Singapore</span><span class="libindex__c">25</span></a></li>
+          <li><a href="#g-finland"><span class="libindex__n">04</span><span class="libindex__name">Finland</span><span class="libindex__c">5</span></a></li>
+          <li><a href="#g-japan"><span class="libindex__n">05</span><span class="libindex__name">Japan</span><span class="libindex__c">5</span></a></li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <div class="lib__bar" id="libBar">
+    <div class="shell">
+      <div class="lib__row">
+        <span class="lib__label">Watch for</span>
+        <button class="chip d-body" data-filter="domain" data-value="body" aria-pressed="false"><span class="chip__dot"></span>Body &amp; hands</button>
+        <button class="chip d-focus" data-filter="domain" data-value="focus" aria-pressed="false"><span class="chip__dot"></span>Focus &amp; memory</button>
+        <button class="chip d-thinking" data-filter="domain" data-value="thinking" aria-pressed="false"><span class="chip__dot"></span>Thinking &amp; logic</button>
+        <button class="chip d-feeling" data-filter="domain" data-value="feeling" aria-pressed="false"><span class="chip__dot"></span>Feeling &amp; self</button>
+        <button class="chip d-language" data-filter="domain" data-value="language" aria-pressed="false"><span class="chip__dot"></span>Language &amp; telling</button>
+      </div>
+      <div class="lib__row">
+        <span class="lib__label">Model</span>
+        <button class="chip" data-filter="model" data-value="montessori" aria-pressed="false">Montessori</button>
+        <button class="chip" data-filter="model" data-value="reggio" aria-pressed="false">Reggio Emilia</button>
+        <button class="chip" data-filter="model" data-value="singapore" aria-pressed="false">Singapore</button>
+        <button class="chip" data-filter="model" data-value="finland" aria-pressed="false">Finland</button>
+        <button class="chip" data-filter="model" data-value="japan" aria-pressed="false">Japan</button>
+        <span class="lib__count" id="libCount">45 activities</span>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding-bottom: var(--s-8);">
+    <div class="shell">
+      <div class="acts" id="acts">
+<div class="actgroup" id="g-montessori" data-group="montessori"><h2 class="actgroup__name">Montessori</h2><p class="actgroup__note">Practical life, and the prepared environment.</p><span class="actgroup__n">5 activities</span></div>
+<article class="act d-focus" data-domains="focus body feeling" data-model="montessori" data-text="water pouring &amp; transferring the child pours colored water from one small pitcher to another, focusing on wrist control, and wipes up any spills themselves with a sponge. focus fine motor precision wrist control self-regulation">
+  <div class="act__top">
+    <span class="act__model">Italy &middot; Montessori</span>
+  </div>
+  <h3>Water Pouring &amp; Transferring</h3>
+  <p class="act__desc">The child pours colored water from one small pitcher to another, focusing on wrist control, and wipes up any spills themselves with a sponge.</p>
+  <div class="act__why"><b>Why it works</b>Spilled water gives the child instant, judgment-free feedback — teaching them to self-correct and concentrate without needing adult praise.</div>
+  <div class="act__tags"><span class="tag">Focus</span><span class="tag">Fine motor precision</span><span class="tag">Wrist control</span><span class="tag">Self-regulation</span></div>
+  <p class="act__src">Source: <a href="https://amshq.org/blog/child-psychology/2023-10-23-practical-life-through-the-ages-part-one-early-childhood/" rel="noopener nofollow" target="_blank">American Montessori Society — Practical Life through the Ages</a></p>
+</article>
+<article class="act d-body" data-domains="body" data-model="montessori" data-text="squeeze &amp; drop clothespin challenge the child squeezes open wooden clothespins to clip or drop them around a jar, building the pincer grip needed for handwriting. hand strength pincer grasp hand-eye coordination">
+  <div class="act__top">
+    <span class="act__model">Italy &middot; Montessori</span>
+  </div>
+  <h3>Squeeze &amp; Drop Clothespin Challenge</h3>
+  <p class="act__desc">The child squeezes open wooden clothespins to clip or drop them around a jar, building the pincer grip needed for handwriting.</p>
+  <div class="act__why"><b>Why it works</b>Squeezing spring clothespins isolates the exact fingers used in a mature pencil grip, building the muscle memory kids need before they start writing.</div>
+  <div class="act__tags"><span class="tag">Hand strength</span><span class="tag">Pincer grasp</span><span class="tag">Hand-eye coordination</span></div>
+  <p class="act__src">Source: <a href="https://eric.ed.gov/?id=EJ659771" rel="noopener nofollow" target="_blank">Early Childhood Education Journal — Effects of Practical Life Materials on Fine Motor Skills</a></p>
+</article>
+<article class="act d-body" data-domains="body focus" data-model="montessori" data-text="spooning &amp; scooping grain transfer using a three-finger spoon grip, the child transfers dry grains from one bowl to another, left to right. bilateral coordination concentration visual tracking">
+  <div class="act__top">
+    <span class="act__model">Italy &middot; Montessori</span>
+  </div>
+  <h3>Spooning &amp; Scooping Grain Transfer</h3>
+  <p class="act__desc">Using a three-finger spoon grip, the child transfers dry grains from one bowl to another, left to right.</p>
+  <div class="act__why"><b>Why it works</b>The left-to-right transfer mirrors the visual scanning pattern used in reading and writing, quietly building pre-literacy pathways.</div>
+  <div class="act__tags"><span class="tag">Bilateral coordination</span><span class="tag">Concentration</span><span class="tag">Visual tracking</span></div>
+  <p class="act__src">Source: <a href="https://www.researchgate.net/publication/276322652" rel="noopener nofollow" target="_blank">Early Education and Development — Educational Gymnastics</a></p>
+</article>
+<article class="act d-body" data-domains="body focus thinking" data-model="montessori" data-text="tweezing &amp; compartment sorting with child-safe tweezers, the child moves pom-poms or pasta pieces one at a time into the compartments of an ice cube tray. pincer strength working memory visual sorting">
+  <div class="act__top">
+    <span class="act__model">Italy &middot; Montessori</span>
+  </div>
+  <h3>Tweezing &amp; Compartment Sorting</h3>
+  <p class="act__desc">With child-safe tweezers, the child moves pom-poms or pasta pieces one at a time into the compartments of an ice cube tray.</p>
+  <div class="act__why"><b>Why it works</b>Precision finger work like this activates the brain regions that regulate motor control, linking dexterity directly to cognitive processing.</div>
+  <div class="act__tags"><span class="tag">Pincer strength</span><span class="tag">Working memory</span><span class="tag">Visual sorting</span></div>
+  <p class="act__src">Source: <a href="https://scispace.com/pdf/effects-of-practical-life-materials-on-kindergartners-fine-m06s1c957h.pdf" rel="noopener nofollow" target="_blank">Early Childhood Education Journal — Effects of Practical Life Materials</a></p>
+</article>
+<article class="act d-body" data-domains="body thinking focus" data-model="montessori" data-text="sewn-line fabric folding the child folds small cloths along visible stitched guidelines, aligning corners and smoothing each crease by hand. bilateral coordination spatial awareness task completion">
+  <div class="act__top">
+    <span class="act__model">Italy &middot; Montessori</span>
+  </div>
+  <h3>Sewn-Line Fabric Folding</h3>
+  <p class="act__desc">The child folds small cloths along visible stitched guidelines, aligning corners and smoothing each crease by hand.</p>
+  <div class="act__why"><b>Why it works</b>Folding symmetrically with both hands strengthens communication between the brain's two hemispheres, turning an abstract shape into something physical and concrete.</div>
+  <div class="act__tags"><span class="tag">Bilateral coordination</span><span class="tag">Spatial awareness</span><span class="tag">Task completion</span></div>
+  <p class="act__src">Source: <a href="https://amshq.org/blog/child-psychology/2023-10-23-practical-life-through-the-ages-part-one-early-childhood/" rel="noopener nofollow" target="_blank">American Montessori Society — Practical Life through the Ages</a></p>
+</article>
+<div class="actgroup" id="g-reggio" data-group="reggio"><h2 class="actgroup__name">Reggio Emilia</h2><p class="actgroup__note">The child as capable, and learning made visible.</p><span class="actgroup__n">5 activities</span></div>
+<article class="act d-feeling" data-domains="feeling thinking body" data-model="reggio" data-text="mirror self-portraits the child studies their own reflection in a mirror and draws what they see, while a parent gently narrates facial details. self-awareness visual-spatial organization fine motor coordination">
+  <div class="act__top">
+    <span class="act__model">Italy &middot; Reggio Emilia</span>
+  </div>
+  <h3>Mirror Self-Portraits</h3>
+  <p class="act__desc">The child studies their own reflection in a mirror and draws what they see, while a parent gently narrates facial details.</p>
+  <div class="act__why"><b>Why it works</b>Translating a 3D reflection onto flat paper exercises sustained attention, spatial planning, and early identity formation all at once.</div>
+  <div class="act__tags"><span class="tag">Self-awareness</span><span class="tag">Visual-spatial organization</span><span class="tag">Fine motor coordination</span></div>
+  <p class="act__src">Source: <a href="https://pz.harvard.edu/projects/making-learning-visible" rel="noopener nofollow" target="_blank">Harvard Project Zero — Making Learning Visible</a></p>
+</article>
+<article class="act d-feeling" data-domains="feeling thinking body" data-model="reggio" data-text="loose parts portraiture buttons, dry leaves, pebbles, and twigs are arranged freely by the child into faces, animals, or abstract scenes. creativity symbolic representation fine motor control">
+  <div class="act__top">
+    <span class="act__model">Italy &middot; Reggio Emilia</span>
+  </div>
+  <h3>Loose Parts Portraiture</h3>
+  <p class="act__desc">Buttons, dry leaves, pebbles, and twigs are arranged freely by the child into faces, animals, or abstract scenes.</p>
+  <div class="act__why"><b>Why it works</b>The more open-ended variables in an environment, the more creativity and discovery it produces — arranging loose parts to represent concrete objects strengthens symbolic thinking.</div>
+  <div class="act__tags"><span class="tag">Creativity</span><span class="tag">Symbolic representation</span><span class="tag">Fine motor control</span></div>
+  <p class="act__src">Source: <a href="http://www.playscotland.org/wp-content/uploads/1-Loose-Parts-Play.pdf" rel="noopener nofollow" target="_blank">Play Scotland — Loose Parts Play: A Toolkit</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking body" data-model="reggio" data-text="interactive light &amp; shadow tracing using sunlight or a flashlight, the child traces the shadows cast by toys or their own body, then experiments with moving the light source. scientific inquiry spatial awareness visual-motor integration">
+  <div class="act__top">
+    <span class="act__model">Italy &middot; Reggio Emilia</span>
+  </div>
+  <h3>Interactive Light &amp; Shadow Tracing</h3>
+  <p class="act__desc">Using sunlight or a flashlight, the child traces the shadows cast by toys or their own body, then experiments with moving the light source.</p>
+  <div class="act__why"><b>Why it works</b>Letting kids discover why shadows shift — rather than being told — builds stronger scientific reasoning and memory retention.</div>
+  <div class="act__tags"><span class="tag">Scientific inquiry</span><span class="tag">Spatial awareness</span><span class="tag">Visual-motor integration</span></div>
+  <p class="act__src">Source: <a href="https://www.naeyc.org/resources/blog/whats-shadow" rel="noopener nofollow" target="_blank">NAEYC — What's a Shadow?</a></p>
+</article>
+<article class="act d-language" data-domains="language focus thinking" data-model="reggio" data-text="polysensorial acoustic matching jars pairs of opaque bottles are filled with varying amounts of rice, beans, or sand; the child shakes and matches jars with identical sounds. auditory discrimination working memory categorization">
+  <div class="act__top">
+    <span class="act__model">Italy &middot; Reggio Emilia</span>
+  </div>
+  <h3>Polysensorial Acoustic Matching Jars</h3>
+  <p class="act__desc">Pairs of opaque bottles are filled with varying amounts of rice, beans, or sand; the child shakes and matches jars with identical sounds.</p>
+  <div class="act__why"><b>Why it works</b>Matching sounds without visual cues forces the brain to store and compare auditory memories, expanding working memory capacity.</div>
+  <div class="act__tags"><span class="tag">Auditory discrimination</span><span class="tag">Working memory</span><span class="tag">Categorization</span></div>
+  <p class="act__src">Source: <a href="https://www.reggiochildren.it/en/athomewiththereggioapproach/" rel="noopener nofollow" target="_blank">Reggio Children — At Home with the Reggio Approach</a></p>
+</article>
+<article class="act d-body" data-domains="body feeling" data-model="reggio" data-text="mirror &amp; acetate sheet process painting a clear sheet is taped over a mirror, and the child paints directly over their own reflection with washable paint. fine motor coordination emotional regulation creativity">
+  <div class="act__top">
+    <span class="act__model">Italy &middot; Reggio Emilia</span>
+  </div>
+  <h3>Mirror &amp; Acetate Sheet Process Painting</h3>
+  <p class="act__desc">A clear sheet is taped over a mirror, and the child paints directly over their own reflection with washable paint.</p>
+  <div class="act__why"><b>Why it works</b>The soft, reflected light and tactile paint layers create a calming environment that helps lower emotional arousal and build self-regulation.</div>
+  <div class="act__tags"><span class="tag">Fine motor coordination</span><span class="tag">Emotional regulation</span><span class="tag">Creativity</span></div>
+  <p class="act__src">Source: <a href="https://www.corampacey.org.uk/wp-content/uploads/2025/02/The-use-of-light-eng.pdf" rel="noopener nofollow" target="_blank">PACEY — The Use of Light, Dark, and Shadow in Children's Play</a></p>
+</article>
+<div class="actgroup" id="g-singapore" data-group="singapore"><h2 class="actgroup__name">Singapore</h2><p class="actgroup__note">Concrete, then pictorial, then abstract.</p><span class="actgroup__n">25 activities</span></div>
+<article class="act d-feeling" data-domains="feeling thinking language" data-model="singapore" data-text="the daily contribution tray the child sorts household items like socks and cutlery back into their designated places, explaining their system afterward. independence cognitive organization communication">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Nurturing Early Learners (NEL)</span>
+  </div>
+  <h3>The Daily Contribution Tray</h3>
+  <p class="act__desc">The child sorts household items like socks and cutlery back into their designated places, explaining their system afterward.</p>
+  <div class="act__why"><b>Why it works</b>Framing a routine task as a daily contribution (not a chore) builds early autonomy and self-management.</div>
+  <div class="act__tags"><span class="tag">Independence</span><span class="tag">Cognitive organization</span><span class="tag">Communication</span></div>
+  <p class="act__src">Source: <a href="https://www.moe.gov.sg/preschool/curriculum" rel="noopener nofollow" target="_blank">Ministry of Education, Singapore — NEL Framework</a></p>
+</article>
+<article class="act d-feeling" data-domains="feeling language" data-model="singapore" data-text="the emotion reflection mirror holding a hand mirror, the child acts out emotion cards (frustration, excitement, worry) while naming the physical sensations that go with each one. emotional regulation self-awareness vocabulary">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Nurturing Early Learners (NEL)</span>
+  </div>
+  <h3>The Emotion Reflection Mirror</h3>
+  <p class="act__desc">Holding a hand mirror, the child acts out emotion cards (frustration, excitement, worry) while naming the physical sensations that go with each one.</p>
+  <div class="act__why"><b>Why it works</b>Giving children words for internal feelings helps them move from physical outbursts to verbal expression.</div>
+  <div class="act__tags"><span class="tag">Emotional regulation</span><span class="tag">Self-awareness</span><span class="tag">Vocabulary</span></div>
+  <p class="act__src">Source: <a href="https://nel.moe.edu.sg/tl/all-resources/nel-framework-2022-/" rel="noopener nofollow" target="_blank">NIE / MOE Singapore — NEL Framework 2022</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking body" data-model="singapore" data-text="nature's sensory map after a short nature walk, the child arranges five collected items — a stone, a leaf, a twig — on a paper grid and describes their textures. curiosity sensory integration classification">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Nurturing Early Learners (NEL)</span>
+  </div>
+  <h3>Nature's Sensory Map</h3>
+  <p class="act__desc">After a short nature walk, the child arranges five collected items — a stone, a leaf, a twig — on a paper grid and describes their textures.</p>
+  <div class="act__why"><b>Why it works</b>Direct tactile engagement with real materials sparks curiosity and helps children organize new information.</div>
+  <div class="act__tags"><span class="tag">Curiosity</span><span class="tag">Sensory integration</span><span class="tag">Classification</span></div>
+  <p class="act__src">Source: <a href="https://isomer-user-content.by.gov.sg/57/e86cbd11-5d73-4cca-8bf1-12ad3e8f95f0/" rel="noopener nofollow" target="_blank">MOE Singapore — Discovery of the World Guide</a></p>
+</article>
+<article class="act d-focus" data-domains="focus thinking feeling" data-model="singapore" data-text="the resilient tower challenge the child builds the tallest possible tower from cups or bricks; when it falls, a parent guides them to reflect and try a new design. perseverance spatial reasoning emotional regulation">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Nurturing Early Learners (NEL)</span>
+  </div>
+  <h3>The Resilient Tower Challenge</h3>
+  <p class="act__desc">The child builds the tallest possible tower from cups or bricks; when it falls, a parent guides them to reflect and try a new design.</p>
+  <div class="act__why"><b>Why it works</b>Working through a collapsed tower builds frustration tolerance and a positive attitude toward problem-solving.</div>
+  <div class="act__tags"><span class="tag">Perseverance</span><span class="tag">Spatial reasoning</span><span class="tag">Emotional regulation</span></div>
+  <p class="act__src">Source: <a href="https://www.moe.gov.sg/preschool/curriculum" rel="noopener nofollow" target="_blank">MOE Singapore — NEL Curriculum Guidelines</a></p>
+</article>
+<article class="act d-feeling" data-domains="feeling body focus" data-model="singapore" data-text="musical rhythm paints as music shifts from slow to fast, the child translates the rhythm into paint strokes and patterns on paper. creative expression fine motor coordination attention">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Nurturing Early Learners (NEL)</span>
+  </div>
+  <h3>Musical Rhythm Paints</h3>
+  <p class="act__desc">As music shifts from slow to fast, the child translates the rhythm into paint strokes and patterns on paper.</p>
+  <div class="act__why"><b>Why it works</b>Turning sound into movement and art lets children express feelings through a non-verbal channel.</div>
+  <div class="act__tags"><span class="tag">Creative expression</span><span class="tag">Fine motor coordination</span><span class="tag">Attention</span></div>
+  <p class="act__src">Source: <a href="https://nel.moe.edu.sg/tl/framework-and-guidelines/" rel="noopener nofollow" target="_blank">MOE Singapore — Aesthetics and Creative Expression Guide</a></p>
+</article>
+<article class="act d-focus" data-domains="focus thinking body" data-model="singapore" data-text="the cpa measurement ladder the child measures a table using toy blocks end-to-end, then sketches the blocks and writes the number sentence. working memory abstract reasoning fine motor coordination">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Concrete-Pictorial-Abstract (CPA)</span>
+  </div>
+  <h3>The CPA Measurement Ladder</h3>
+  <p class="act__desc">The child measures a table using toy blocks end-to-end, then sketches the blocks and writes the number sentence.</p>
+  <div class="act__why"><b>Why it works</b>Moving from physical movement to a drawing links tactile play to formal math symbols so the concept sticks.</div>
+  <div class="act__tags"><span class="tag">Working memory</span><span class="tag">Abstract reasoning</span><span class="tag">Fine motor coordination</span></div>
+  <p class="act__src">Source: <a href="https://repository.nie.edu.sg/entities/publication/a179146f-ac98-4c32-b576-f5df85253240" rel="noopener nofollow" target="_blank">NIE Singapore / AME — CPA: Origins and Future</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking body language" data-model="singapore" data-text="share-bowl button division twelve buttons are split evenly across three bowls, then drawn and written as a division equation. problem solving fine motor coordination mathematical communication">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Concrete-Pictorial-Abstract (CPA)</span>
+  </div>
+  <h3>Share-Bowl Button Division</h3>
+  <p class="act__desc">Twelve buttons are split evenly across three bowls, then drawn and written as a division equation.</p>
+  <div class="act__why"><b>Why it works</b>Physically sharing items connects the idea of division to fair, equal distribution.</div>
+  <div class="act__tags"><span class="tag">Problem solving</span><span class="tag">Fine motor coordination</span><span class="tag">Mathematical communication</span></div>
+  <p class="act__src">Source: <a href="https://www.moe.gov.sg/preschool/curriculum" rel="noopener nofollow" target="_blank">MOE Singapore — Primary Mathematics Syllabus</a></p>
+</article>
+<article class="act d-focus" data-domains="focus thinking" data-model="singapore" data-text="straw bundle regrouping the child bundles ten straws with a rubber band to understand place value, then draws and writes the tens and ones. attention working memory logical classification">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Concrete-Pictorial-Abstract (CPA)</span>
+  </div>
+  <h3>Straw Bundle Regrouping</h3>
+  <p class="act__desc">The child bundles ten straws with a rubber band to understand place value, then draws and writes the tens and ones.</p>
+  <div class="act__why"><b>Why it works</b>Bundling objects physically builds a real understanding of place value before it becomes abstract.</div>
+  <div class="act__tags"><span class="tag">Attention</span><span class="tag">Working memory</span><span class="tag">Logical classification</span></div>
+  <p class="act__src">Source: <a href="https://www.singaporemath.com/pages/what-is-singapore-math" rel="noopener nofollow" target="_blank">Georgia Association of Teacher Educators — Teaching Singapore Math</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking body language" data-model="singapore" data-text="daily object geometry trace circular plates, square coasters, and rectangular books are traced onto colored paper and labeled with their shape names. spatial concepts fine motor control print awareness">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Concrete-Pictorial-Abstract (CPA)</span>
+  </div>
+  <h3>Daily Object Geometry Trace</h3>
+  <p class="act__desc">Circular plates, square coasters, and rectangular books are traced onto colored paper and labeled with their shape names.</p>
+  <div class="act__why"><b>Why it works</b>Handling real-world geometry connects abstract shapes to objects the child already knows.</div>
+  <div class="act__tags"><span class="tag">Spatial concepts</span><span class="tag">Fine motor control</span><span class="tag">Print awareness</span></div>
+  <p class="act__src">Source: <a href="https://nel.moe.edu.sg/tl/framework-and-guidelines/" rel="noopener nofollow" target="_blank">MOE Singapore — Numeracy Guidelines</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking body" data-model="singapore" data-text="craft stick house subtraction eight craft sticks form a house frame; the child draws the house, crosses out three sticks, and writes the subtraction sentence. relational thinking problem solving motor coordination">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Concrete-Pictorial-Abstract (CPA)</span>
+  </div>
+  <h3>Craft Stick House Subtraction</h3>
+  <p class="act__desc">Eight craft sticks form a house frame; the child draws the house, crosses out three sticks, and writes the subtraction sentence.</p>
+  <div class="act__why"><b>Why it works</b>Representing subtraction as dismantling something physical makes the operation logical, not abstract.</div>
+  <div class="act__tags"><span class="tag">Relational thinking</span><span class="tag">Problem solving</span><span class="tag">Motor coordination</span></div>
+  <p class="act__src">Source: <a href="https://repository.nie.edu.sg/entities/publication/a179146f-ac98-4c32-b576-f5df85253240" rel="noopener nofollow" target="_blank">AME Singapore — CPA Instructional Sequences</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking focus" data-model="singapore" data-text="snacking split plates six snacks are split across two plates in different combinations, then recorded as a number bond diagram. number sense cognitive flexibility working memory">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Number Bonds</span>
+  </div>
+  <h3>Snacking Split Plates</h3>
+  <p class="act__desc">Six snacks are split across two plates in different combinations, then recorded as a number bond diagram.</p>
+  <div class="act__why"><b>Why it works</b>Splitting a physical collection shows children that a total doesn't change even when it's divided differently.</div>
+  <div class="act__tags"><span class="tag">Number sense</span><span class="tag">Cognitive flexibility</span><span class="tag">Working memory</span></div>
+  <p class="act__src">Source: <a href="https://www.hmhco.com/research/math-in-focus-singapore-math-by-marshall-cavendish-research-evidence-base" rel="noopener nofollow" target="_blank">Marshall Cavendish Education — Math in Focus Research</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking" data-model="singapore" data-text="ten-frame egg carton slots a 10-slot egg carton holds pom-poms; the child counts empty slots to find bond partners that make ten. spatial reasoning cognitive flexibility pattern recognition">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Number Bonds</span>
+  </div>
+  <h3>Ten-Frame Egg Carton Slots</h3>
+  <p class="act__desc">A 10-slot egg carton holds pom-poms; the child counts empty slots to find bond partners that make ten.</p>
+  <div class="act__why"><b>Why it works</b>Grouping numbers around the benchmark of ten builds rapid visual processing for mental arithmetic.</div>
+  <div class="act__tags"><span class="tag">Spatial reasoning</span><span class="tag">Cognitive flexibility</span><span class="tag">Pattern recognition</span></div>
+  <p class="act__src">Source: <a href="https://mathsnoproblem.com/en/approach/number-bonds" rel="noopener nofollow" target="_blank">NIE Singapore — Model Method and Number Representation</a></p>
+</article>
+<article class="act d-focus" data-domains="focus thinking" data-model="singapore" data-text="two-tone counter toss beans colored red on one side and white on the other are tossed and recorded on a part-whole diagram to find every combination of a number. attention systematic thinking pattern recognition">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Number Bonds</span>
+  </div>
+  <h3>Two-Tone Counter Toss</h3>
+  <p class="act__desc">Beans colored red on one side and white on the other are tossed and recorded on a part-whole diagram to find every combination of a number.</p>
+  <div class="act__why"><b>Why it works</b>Discovering combinations through a simple random game builds a complete mental map of a number's parts.</div>
+  <div class="act__tags"><span class="tag">Attention</span><span class="tag">Systematic thinking</span><span class="tag">Pattern recognition</span></div>
+  <p class="act__src">Source: <a href="https://mathsnoproblem.com/en/approach/number-bonds" rel="noopener nofollow" target="_blank">Georgia Association of Teacher Educators</a></p>
+</article>
+<article class="act d-body" data-domains="body thinking" data-model="singapore" data-text="clothespin hanger split eight clothespins on a hanger are split into two groups with a cardboard divider, then recorded as a number bond. fine motor coordination spatial-visual reasoning problem solving">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Number Bonds</span>
+  </div>
+  <h3>Clothespin Hanger Split</h3>
+  <p class="act__desc">Eight clothespins on a hanger are split into two groups with a cardboard divider, then recorded as a number bond.</p>
+  <div class="act__why"><b>Why it works</b>Partitioning items along a line mirrors a number line, helping the child grasp addition and subtraction.</div>
+  <div class="act__tags"><span class="tag">Fine motor coordination</span><span class="tag">Spatial-visual reasoning</span><span class="tag">Problem solving</span></div>
+  <p class="act__src">Source: <a href="https://www.singaporemath.com/pages/what-is-singapore-math" rel="noopener nofollow" target="_blank">Georgia Association of Teacher Educators — Implementing Singapore Math</a></p>
+</article>
+<article class="act d-focus" data-domains="focus body" data-model="singapore" data-text="make-ten floor jump numbered circles are chalked on the floor; when a parent calls a number, the child jumps to its bond partner that makes ten. rapid recall working memory gross motor coordination">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Number Bonds</span>
+  </div>
+  <h3>Make-Ten Floor Jump</h3>
+  <p class="act__desc">Numbered circles are chalked on the floor; when a parent calls a number, the child jumps to its bond partner that makes ten.</p>
+  <div class="act__why"><b>Why it works</b>Pairing physical movement with quick recall helps children remember number facts through action.</div>
+  <div class="act__tags"><span class="tag">Rapid recall</span><span class="tag">Working memory</span><span class="tag">Gross motor coordination</span></div>
+  <p class="act__src">Source: <a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2019.00037/full" rel="noopener nofollow" target="_blank">Frontiers in Education — East Asian Mathematics Mastery</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking" data-model="singapore" data-text="toy block comparison spans two parallel towers of lego bricks are built side-by-side to visually solve a comparison word problem. relational reasoning problem solving visual-spatial mapping">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Model Method (Bar Modeling)</span>
+  </div>
+  <h3>Toy Block Comparison Spans</h3>
+  <p class="act__desc">Two parallel towers of Lego bricks are built side-by-side to visually solve a comparison word problem.</p>
+  <div class="act__why"><b>Why it works</b>Comparing physical towers of different heights makes the correct math operation obvious.</div>
+  <div class="act__tags"><span class="tag">Relational reasoning</span><span class="tag">Problem solving</span><span class="tag">Visual-spatial mapping</span></div>
+  <p class="act__src">Source: <a href="https://www.researchgate.net/publication/299448956_Model_Method_in_Singapore_primary_mathematics_textbooks" rel="noopener nofollow" target="_blank">NIE Singapore — Model Method in Textbooks</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking body" data-model="singapore" data-text="playdough missing-segment cuts a playdough log representing a whole amount is cut into two pieces to solve a missing-part word problem. spatial estimation fine motor coordination logical subtraction">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Model Method (Bar Modeling)</span>
+  </div>
+  <h3>Playdough Missing-Segment Cuts</h3>
+  <p class="act__desc">A playdough log representing a whole amount is cut into two pieces to solve a missing-part word problem.</p>
+  <div class="act__why"><b>Why it works</b>Dividing a continuous object physically represents part-whole math and builds subtraction understanding.</div>
+  <div class="act__tags"><span class="tag">Spatial estimation</span><span class="tag">Fine motor coordination</span><span class="tag">Logical subtraction</span></div>
+  <p class="act__src">Source: <a href="https://www.researchgate.net/publication/262562244" rel="noopener nofollow" target="_blank">International Journal of Teacher Educational Research</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking focus" data-model="singapore" data-text="paper strip comparison models colored paper strips of different lengths are glued onto a grid to visually compute the leftover difference between two amounts. measurement visual-spatial reasoning planning">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Model Method (Bar Modeling)</span>
+  </div>
+  <h3>Paper Strip Comparison Models</h3>
+  <p class="act__desc">Colored paper strips of different lengths are glued onto a grid to visually compute the leftover difference between two amounts.</p>
+  <div class="act__why"><b>Why it works</b>Visual comparison bars scaffold proportional and fractional thinking as segments of a whole.</div>
+  <div class="act__tags"><span class="tag">Measurement</span><span class="tag">Visual-spatial reasoning</span><span class="tag">Planning</span></div>
+  <p class="act__src">Source: <a href="https://math.nie.edu.sg/" rel="noopener nofollow" target="_blank">NIE Singapore — The Model Method</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking" data-model="singapore" data-text="train-align proportional brackets two toy trains of different lengths are lined up, and a cardboard bracket marks the exact ratio and difference. proportional reasoning relational logic visual comparison">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Model Method (Bar Modeling)</span>
+  </div>
+  <h3>Train-Align Proportional Brackets</h3>
+  <p class="act__desc">Two toy trains of different lengths are lined up, and a cardboard bracket marks the exact ratio and difference.</p>
+  <div class="act__why"><b>Why it works</b>Aligning physical units side by side bridges hands-on play with formal bar models.</div>
+  <div class="act__tags"><span class="tag">Proportional reasoning</span><span class="tag">Relational logic</span><span class="tag">Visual comparison</span></div>
+  <p class="act__src">Source: <a href="https://www.hmhco.com/research/math-in-focus-singapore-math-by-marshall-cavendish-research-evidence-base" rel="noopener nofollow" target="_blank">Marshall Cavendish Education — Model Drawing</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking focus" data-model="singapore" data-text="sliding scale tape measure masking a soft tape measure is partly covered with cardstock, and the child solves for the hidden segment length. linear measurement logical subtraction working memory">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Model Method (Bar Modeling)</span>
+  </div>
+  <h3>Sliding Scale Tape Measure Masking</h3>
+  <p class="act__desc">A soft tape measure is partly covered with cardstock, and the child solves for the hidden segment length.</p>
+  <div class="act__why"><b>Why it works</b>Anchoring math to a standardized scale builds spatial coordinates and operational sense.</div>
+  <div class="act__tags"><span class="tag">Linear measurement</span><span class="tag">Logical subtraction</span><span class="tag">Working memory</span></div>
+  <p class="act__src">Source: <a href="https://scholarworks.waldenu.edu/cgi/viewcontent.cgi?article=2105&amp;context=dissertations" rel="noopener nofollow" target="_blank">Walden University Dissertations</a></p>
+</article>
+<article class="act d-language" data-domains="language thinking" data-model="singapore" data-text="digestive mealtime speculation at dinner, a parent asks, &quot;what do you think happens to our food after we swallow it?&quot; scientific vocabulary expressive language curiosity">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Caregiver-Child Pedagogical Questioning</span>
+  </div>
+  <h3>Digestive Mealtime Speculation</h3>
+  <p class="act__desc">At dinner, a parent asks, &quot;What do you think happens to our food after we swallow it?&quot;</p>
+  <div class="act__why"><b>Why it works</b>Asking questions during regular routines helps children connect everyday experience to scientific ideas.</div>
+  <div class="act__tags"><span class="tag">Scientific vocabulary</span><span class="tag">Expressive language</span><span class="tag">Curiosity</span></div>
+  <p class="act__src">Source: <a href="https://nel.moe.edu.sg/research-bites/" rel="noopener nofollow" target="_blank">KidsSTOP Science Centre Singapore — Caregiver-Child Questioning</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking focus" data-model="singapore" data-text="sink-float buoyancy probing during water play, the child drops items in water while a parent asks why some float and others sink. hypothesis testing systematic observation logical reasoning">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Caregiver-Child Pedagogical Questioning</span>
+  </div>
+  <h3>Sink-Float Buoyancy Probing</h3>
+  <p class="act__desc">During water play, the child drops items in water while a parent asks why some float and others sink.</p>
+  <div class="act__why"><b>Why it works</b>Seeing cause and effect in real time, paired with questions, builds early physics understanding.</div>
+  <div class="act__tags"><span class="tag">Hypothesis testing</span><span class="tag">Systematic observation</span><span class="tag">Logical reasoning</span></div>
+  <p class="act__src">Source: <a href="https://isomer-user-content.by.gov.sg/57/ade0a5fb-fb58-4f19-89ae-6dfcb0465db6/" rel="noopener nofollow" target="_blank">Singapore Science Centre KidsSTOP — Pedagogical Questioning</a></p>
+</article>
+<article class="act d-thinking" data-domains="thinking feeling" data-model="singapore" data-text="ecological sorting discussion while sorting recycling, a parent asks why plastic is harder on the environment than paper. problem solving environmental responsibility critical thinking">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Caregiver-Child Pedagogical Questioning</span>
+  </div>
+  <h3>Ecological Sorting Discussion</h3>
+  <p class="act__desc">While sorting recycling, a parent asks why plastic is harder on the environment than paper.</p>
+  <div class="act__why"><b>Why it works</b>Talking through real-world sustainability tasks helps children apply new concepts.</div>
+  <div class="act__tags"><span class="tag">Problem solving</span><span class="tag">Environmental responsibility</span><span class="tag">Critical thinking</span></div>
+  <p class="act__src">Source: <a href="https://nel.moe.edu.sg/research-bites/" rel="noopener nofollow" target="_blank">MOE Singapore — Research Bites</a></p>
+</article>
+<article class="act d-language" data-domains="language feeling thinking" data-model="singapore" data-text="comparative storybook prompting while reading, a parent asks comparison questions like, &quot;why do birds fly but lions don't?&quot; print awareness creative imagination comparative logic">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Caregiver-Child Pedagogical Questioning</span>
+  </div>
+  <h3>Comparative Storybook Prompting</h3>
+  <p class="act__desc">While reading, a parent asks comparison questions like, &quot;Why do birds fly but lions don't?&quot;</p>
+  <div class="act__why"><b>Why it works</b>Questions that go beyond the text build comprehension and language skills.</div>
+  <div class="act__tags"><span class="tag">Print awareness</span><span class="tag">Creative imagination</span><span class="tag">Comparative logic</span></div>
+  <p class="act__src">Source: <a href="https://nel.moe.edu.sg/research-bites/" rel="noopener nofollow" target="_blank">KidsSTOP / NIE — Caregiver-Child Interaction and Reading</a></p>
+</article>
+<article class="act d-focus" data-domains="focus thinking" data-model="singapore" data-text="kitchen state-change mystery while making popsicles, a parent asks why liquid juice turns solid in the freezer. active observation comparative reasoning causal thinking">
+  <div class="act__top">
+    <span class="act__model">Singapore &middot; Caregiver-Child Pedagogical Questioning</span>
+  </div>
+  <h3>Kitchen State-Change Mystery</h3>
+  <p class="act__desc">While making popsicles, a parent asks why liquid juice turns solid in the freezer.</p>
+  <div class="act__why"><b>Why it works</b>Noticing physical changes in the kitchen builds early mental models of chemistry.</div>
+  <div class="act__tags"><span class="tag">Active observation</span><span class="tag">Comparative reasoning</span><span class="tag">Causal thinking</span></div>
+  <p class="act__src">Source: <a href="https://www.moe.gov.sg/preschool/curriculum" rel="noopener nofollow" target="_blank">MOE Singapore — Discovery of the World Guide</a></p>
+</article>
+<div class="actgroup" id="g-finland" data-group="finland"><h2 class="actgroup__name">Finland</h2><p class="actgroup__note">Care, play and learning treated as one thing.</p><span class="actgroup__n">5 activities</span></div>
+<article class="act d-feeling" data-domains="feeling language focus" data-model="finland" data-text="storycrafting (sadutus) a parent writes down a child's invented story word-for-word, without correcting it, then reads it back for the child to edit. creativity communication working memory language growth">
+  <div class="act__top">
+    <span class="act__model">Finland &middot; ECEC (Educare)</span>
+  </div>
+  <h3>Storycrafting (Sadutus)</h3>
+  <p class="act__desc">A parent writes down a child's invented story word-for-word, without correcting it, then reads it back for the child to edit.</p>
+  <div class="act__why"><b>Why it works</b>Removing the physical task of writing lets the child focus entirely on language and narrative — research links it to notable vocabulary growth.</div>
+  <div class="act__tags"><span class="tag">Creativity</span><span class="tag">Communication</span><span class="tag">Working memory</span><span class="tag">Language growth</span></div>
+  <p class="act__src">Source: <a href="https://journal.fi/jecer/article/view/117886" rel="noopener nofollow" target="_blank">University of Helsinki — My Story, Your Story, Our Story</a></p>
+</article>
+<article class="act d-body" data-domains="body thinking focus" data-model="finland" data-text="paper sloyd using a ruler, pencil, and scissors, the child measures, cuts, and folds craft paper into a functional item like a mini envelope. fine motor skills spatial reasoning working memory patience">
+  <div class="act__top">
+    <span class="act__model">Finland &middot; ECEC (Educare)</span>
+  </div>
+  <h3>Paper Sloyd</h3>
+  <p class="act__desc">Using a ruler, pencil, and scissors, the child measures, cuts, and folds craft paper into a functional item like a mini envelope.</p>
+  <div class="act__why"><b>Why it works</b>This traditional Nordic craft method trains the hand to follow the eye and builds goal-setting and self-regulation.</div>
+  <div class="act__tags"><span class="tag">Fine motor skills</span><span class="tag">Spatial reasoning</span><span class="tag">Working memory</span><span class="tag">Patience</span></div>
+  <p class="act__src">Source: <a href="https://helda.helsinki.fi/server/api/core/bitstreams/fcc324ea-83db-4281-a7eb-9e6aaf18157a/content" rel="noopener nofollow" target="_blank">Techne Series — The Development of Craft Sense</a></p>
+</article>
+<article class="act d-body" data-domains="body thinking" data-model="finland" data-text="biodiverse soil sensory play the child digs and explores a tray of real forest soil, moss, and leaf litter — mixing with water to make mud. sensory regulation curiosity fine motor skills">
+  <div class="act__top">
+    <span class="act__model">Finland &middot; ECEC (Educare)</span>
+  </div>
+  <h3>Biodiverse Soil Sensory Play</h3>
+  <p class="act__desc">The child digs and explores a tray of real forest soil, moss, and leaf litter — mixing with water to make mud.</p>
+  <div class="act__why"><b>Why it works</b>A Finnish study found daily exposure to diverse soil microbes strengthens immune regulation in young children.</div>
+  <div class="act__tags"><span class="tag">Sensory regulation</span><span class="tag">Curiosity</span><span class="tag">Fine motor skills</span></div>
+  <p class="act__src">Source: <a href="http://dx.doi.org/10.1126/sciadv.aba2578" rel="noopener nofollow" target="_blank">University of Helsinki / Science Advances — Biodiversity Intervention</a></p>
+</article>
+<article class="act d-feeling" data-domains="feeling thinking focus" data-model="finland" data-text="independent dressing station outdoor clothes are organized on a low shelf in dressing order, and the child dresses themselves while a parent patiently observes. independence problem solving executive function">
+  <div class="act__top">
+    <span class="act__model">Finland &middot; ECEC (Educare)</span>
+  </div>
+  <h3>Independent Dressing Station</h3>
+  <p class="act__desc">Outdoor clothes are organized on a low shelf in dressing order, and the child dresses themselves while a parent patiently observes.</p>
+  <div class="act__why"><b>Why it works</b>Turning a daily transition into a self-care task reduces cognitive load and builds real self-reliance.</div>
+  <div class="act__tags"><span class="tag">Independence</span><span class="tag">Problem solving</span><span class="tag">Executive function</span></div>
+  <p class="act__src">Source: <a href="https://jyx.jyu.fi/bitstreams/b31f7ac1-47fd-4f48-8a01-fb3c04b502d9/download" rel="noopener nofollow" target="_blank">University of Jyväskylä — Clothes and the Practices of Clothing in ECEC</a></p>
+</article>
+<article class="act d-body" data-domains="body thinking" data-model="finland" data-text="nature affordance navigations during outdoor time, the child is encouraged to walk uneven dirt slopes, climb low roots, and balance on fallen logs, closely supervised. gross motor skills balance risk assessment">
+  <div class="act__top">
+    <span class="act__model">Finland &middot; ECEC (Educare)</span>
+  </div>
+  <h3>Nature Affordance Navigations</h3>
+  <p class="act__desc">During outdoor time, the child is encouraged to walk uneven dirt slopes, climb low roots, and balance on fallen logs, closely supervised.</p>
+  <div class="act__why"><b>Why it works</b>Natural, uneven terrain offers self-scaling challenges that match a child's own ability, building superior long-term motor skills.</div>
+  <div class="act__tags"><span class="tag">Gross motor skills</span><span class="tag">Balance</span><span class="tag">Risk assessment</span></div>
+  <p class="act__src">Source: <a href="https://www.sciencedaily.com/releases/2025/04/250404122427.htm" rel="noopener nofollow" target="_blank">University of Jyväskylä / ScienceDaily — Outdoor Time and Motor Competence</a></p>
+</article>
+<div class="actgroup" id="g-japan" data-group="japan"><h2 class="actgroup__name">Japan</h2><p class="actgroup__note">Shared responsibility, and attention through routine.</p><span class="actgroup__n">5 activities</span></div>
+<article class="act d-focus" data-domains="focus feeling" data-model="japan" data-text="oshitaku visual routine board the child follows a picture-based morning or evening routine board, checking off each step themselves. attention independence self-monitoring">
+  <div class="act__top">
+    <span class="act__model">Japan &middot; Tokkatsu &amp; Shokuiku</span>
+  </div>
+  <h3>Oshitaku Visual Routine Board</h3>
+  <p class="act__desc">The child follows a picture-based morning or evening routine board, checking off each step themselves.</p>
+  <div class="act__why"><b>Why it works</b>Visual schedules act as external scaffolding for a young brain, turning abstract time into a concrete sequence and lowering transition anxiety.</div>
+  <div class="act__tags"><span class="tag">Attention</span><span class="tag">Independence</span><span class="tag">Self-monitoring</span></div>
+  <p class="act__src">Source: <a href="https://www.biermanautism.com/resources/blog/visualschedules/" rel="noopener nofollow" target="_blank">Bierman Autism Support Services — Benefits of Visual Schedules</a></p>
+</article>
+<article class="act d-body" data-domains="body thinking feeling" data-model="japan" data-text="zokin-gake rag-sliding the child places both hands on a damp cloth and slides across the floor to clean it, framed as a playful race. physical coordination spatial awareness independence">
+  <div class="act__top">
+    <span class="act__model">Japan &middot; Tokkatsu &amp; Shokuiku</span>
+  </div>
+  <h3>Zokin-Gake Rag-Sliding</h3>
+  <p class="act__desc">The child places both hands on a damp cloth and slides across the floor to clean it, framed as a playful race.</p>
+  <div class="act__why"><b>Why it works</b>Crossing the body's midline with both hands strengthens communication between brain hemispheres, and builds a shared sense of responsibility.</div>
+  <div class="act__tags"><span class="tag">Physical coordination</span><span class="tag">Spatial awareness</span><span class="tag">Independence</span></div>
+  <p class="act__src">Source: <a href="https://japanculturediscovery.com/etiquette-customs/why-do-japanese-students-clean-their-own-schools/" rel="noopener nofollow" target="_blank">Japan Culture Discovery — Why Japanese Students Clean Their Own Schools</a></p>
+</article>
+<article class="act d-focus" data-domains="focus language thinking" data-model="japan" data-text="shokuiku meal preparation &amp; table setting the child helps with meal prep — washing vegetables, mixing, and setting the table — with clear, multi-step responsibilities. working memory communication problem solving">
+  <div class="act__top">
+    <span class="act__model">Japan &middot; Tokkatsu &amp; Shokuiku</span>
+  </div>
+  <h3>Shokuiku Meal Preparation &amp; Table Setting</h3>
+  <p class="act__desc">The child helps with meal prep — washing vegetables, mixing, and setting the table — with clear, multi-step responsibilities.</p>
+  <div class="act__why"><b>Why it works</b>Studies link multi-step family chores like these to measurable gains in working memory and cognitive flexibility.</div>
+  <div class="act__tags"><span class="tag">Working memory</span><span class="tag">Communication</span><span class="tag">Problem solving</span></div>
+  <p class="act__src">Source: <a href="https://www.latrobe.edu.au/news/articles/2022/release/childrens-chores-improve-brain-function" rel="noopener nofollow" target="_blank">La Trobe University — Children's Chores Improve Brain Function</a></p>
+</article>
+<article class="act d-focus" data-domains="focus feeling body" data-model="japan" data-text="origami geometric folding the child folds origami sheets into basic shapes, guided by brief verbal prompts to align edges and crease precisely. working memory creativity hand-eye coordination">
+  <div class="act__top">
+    <span class="act__model">Japan &middot; Tokkatsu &amp; Shokuiku</span>
+  </div>
+  <h3>Origami Geometric Folding</h3>
+  <p class="act__desc">The child folds origami sheets into basic shapes, guided by brief verbal prompts to align edges and crease precisely.</p>
+  <div class="act__why"><b>Why it works</b>The bimanual, precise folding demands intense coordination between both hemispheres of the brain, boosting spatial reasoning.</div>
+  <div class="act__tags"><span class="tag">Working memory</span><span class="tag">Creativity</span><span class="tag">Hand-eye coordination</span></div>
+  <p class="act__src">Source: <a href="https://www.tandfonline.com/doi/full/10.1080/2331186X.2025.2579349" rel="noopener nofollow" target="_blank">Cogent Education — Origami and Fine Motor Development</a></p>
+</article>
+<article class="act d-feeling" data-domains="feeling language" data-model="japan" data-text="clean-up team leadership rotations a rotating 'leader' role guides siblings to sort and categorize toys into labeled bins after play, instead of one big pile. leadership communication emotional regulation">
+  <div class="act__top">
+    <span class="act__model">Japan &middot; Tokkatsu &amp; Shokuiku</span>
+  </div>
+  <h3>Clean-Up Team Leadership Rotations</h3>
+  <p class="act__desc">A rotating 'leader' role guides siblings to sort and categorize toys into labeled bins after play, instead of one big pile.</p>
+  <div class="act__why"><b>Why it works</b>Rotating leadership roles builds agency and reduces sibling conflict by formalizing everyone's part in the task.</div>
+  <div class="act__tags"><span class="tag">Leadership</span><span class="tag">Communication</span><span class="tag">Emotional regulation</span></div>
+  <p class="act__src">Source: <a href="https://www.p.u-tokyo.ac.jp/~tsunelab/tokkatsu/edwc/" rel="noopener nofollow" target="_blank">University of Tokyo — The Japanese Educational Model of Holistic Education</a></p>
+</article>
+      </div>
+      <p class="lib__empty" id="libEmpty" hidden>No activities match those filters. <button class="btn btn--quiet" id="libReset" style="margin-left:var(--s-2)">Clear filters</button></p>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="/" style="margin-bottom: var(--s-3);">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="7" fill="var(--ink)"/>
+            <path d="M7 14h18M7 20h18" stroke="var(--g-base)" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
+            <path d="M9.2 20c3.3 0 2.8-10.2 6.5-10.2s3.1 6.9 6.3 6.9" fill="none" stroke="var(--g-base)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand__name">UNHEARD</span>
+        </a>
+        <p class="foot__note" style="max-width: 30ch;">Listening to children who learn differently.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/kit">The kit</a></li>
+          <li><a href="/activities">Activity library</a></li>
+          <li><a href="/about">About &amp; research</a></li>
+          <li><a href="/contact">Talk to us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:9958611717">9958611717</a></li>
+          <li><a href="mailto:unheard.corporation@gmail.com">unheard.corporation@gmail.com</a></li>
+          <li><a href="https://instagram.com/unheardco" rel="noopener">@unheardco</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <p class="foot__note">&copy; 2025 UNHEARD</p>
+      <p class="foot__note">Not a diagnostic tool. Not a substitute for professional advice.</p>
+    </div>
+  </div>
+</footer>
+<script src="/js/app.js"></script>
+<script src="/js/library.js"></script>
+</body>
+</html>

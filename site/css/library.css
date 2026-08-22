@@ -1,0 +1,326 @@
+/* ══════════════════════════════════════════════════════════
+   UNHEARD — activity library
+   Colour as legend, not decoration (principle #7). Domain hue
+   is a filter key, so the colour itself is information.
+   ══════════════════════════════════════════════════════════ */
+
+.lib__bar {
+  position: sticky;
+  top: 92px;
+  z-index: 30;
+  background: rgba(250, 249, 252, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--g-edge);
+  padding-block: var(--s-4);
+  margin-bottom: var(--s-7);
+}
+.lib__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  align-items: center;
+}
+.lib__row + .lib__row { margin-top: var(--s-3); }
+.lib__label {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-right: var(--s-2);
+  flex: none;
+  width: 5.4rem;
+}
+@media (max-width: 620px) { .lib__label { width: 100%; margin-bottom: var(--s-1); } }
+
+/* filter chip — carries its domain hue as a dot, so colour is a key */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: var(--g-lifted);
+  border: 1px solid var(--g-edge);
+  border-radius: var(--r-pill);
+  padding: 0.46em 0.9em;
+  cursor: pointer;
+  transition: border-color var(--dur-1) var(--ease),
+              color var(--dur-1) var(--ease),
+              background var(--dur-1) var(--ease);
+}
+.chip:hover { border-color: var(--ink-ghost); color: var(--ink); }
+.chip[aria-pressed="true"] {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: var(--g-sunken);
+}
+.chip__dot {
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  background: var(--dot, var(--ink-ghost));
+  flex: none;
+}
+.chip:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+.d-body     { --dot: var(--s-body); }
+.d-focus    { --dot: var(--s-observe); }
+.d-thinking { --dot: var(--s-think); }
+.d-feeling  { --dot: var(--s-feel); }
+.d-language { --dot: var(--s-lang); }
+
+.lib__count {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-left: auto;
+}
+
+/* ── ACTIVITY CARD ──────────────────────────────────────────── */
+.acts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  /* Row gap is larger than column gap. Cards vary ~96px in height, so
+     an equal gap let tall and short neighbours run together; a taller
+     row gap reads as deliberate spacing rather than ragged fit. */
+  gap: var(--s-6) var(--s-4);
+  align-items: start;
+}
+
+/* ── MODEL GROUP HEADER ──────────────────────────────────────
+   45 cards in one run gave the reader no landmarks and the model
+   changed silently mid-grid. Each header spans the full grid and
+   restates where the next stretch comes from. library.js hides a
+   header when a filter empties its group. */
+.actgroup {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--s-2) var(--s-4);
+  margin-top: var(--s-6);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--g-edge);
+}
+.acts > .actgroup:first-child { margin-top: 0; }
+
+.actgroup__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+.actgroup__note {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+.actgroup__n {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+@media (max-width: 620px) {
+  .actgroup__n { margin-left: 0; }
+}
+.act {
+  background: var(--g-lifted);
+  border: 1px solid var(--g-edge);
+  border-radius: var(--r-md);
+  padding: var(--s-5);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--dur-2) var(--ease),
+              box-shadow var(--dur-2) var(--ease),
+              border-color var(--dur-2) var(--ease);
+}
+.act:hover { transform: translateY(-3px); box-shadow: var(--sh-3); border-color: var(--ink-ghost); }
+/* the domain rail — colour as legend */
+.act::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 3px;
+  background: var(--dot, var(--ink-ghost));
+}
+.act__top {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-bottom: var(--s-3);
+  flex-wrap: wrap;
+}
+.act__model {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.act h3 {
+  font-size: 1.0625rem;
+  line-height: 1.25;
+  margin-bottom: var(--s-3);
+}
+.act__desc { font-size: 0.9375rem; color: var(--ink-body); margin-bottom: var(--s-4); }
+.act__why {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--g-edge);
+  padding-left: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+.act__why b {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+  margin-bottom: var(--s-1);
+}
+.act__tags { display: flex; flex-wrap: wrap; gap: var(--s-1); margin-bottom: var(--s-4); }
+.act__src {
+  font-size: 0.75rem;
+  border-top: 1px solid var(--g-edge);
+  padding-top: var(--s-3);
+  margin: 0;
+  color: var(--ink-faint);
+}
+.act__src a { color: var(--brand-text); }
+
+.lib__empty {
+  text-align: center;
+  padding: var(--s-9) var(--s-5);
+  color: var(--ink-soft);
+}
+
+/* model intro strips */
+.model {
+  border-top: 1px solid var(--g-edge);
+  padding-top: var(--s-4);
+  margin-bottom: var(--s-5);
+}
+.model h2 { font-size: 1.375rem; margin-bottom: var(--s-2); }
+.model p { color: var(--ink-soft); font-size: 0.9375rem; max-width: var(--measure); margin: 0; }
+.model__grp { margin-top: var(--s-6); margin-bottom: var(--s-4); }
+
+/* ══════════════════════════════════════════════════════════
+   LIBRARY HERO
+   The library is the most substantial thing this brand owns,
+   so the page opens with a live index rather than a headline
+   floating in empty space. The index is also the legend: it
+   states the shape of the collection before you scroll it.
+   ══════════════════════════════════════════════════════════ */
+.libhero { padding-block: var(--s-8) var(--s-8); }
+.libhero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--s-7);
+  align-items: center;
+}
+@media (max-width: 940px) {
+  .libhero__grid { grid-template-columns: 1fr; gap: var(--s-6); }
+}
+
+.libindex {
+  background: var(--g-lifted);
+  border: 1px solid var(--g-edge);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-3);
+  overflow: hidden;
+}
+.libindex__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--s-5);
+  border-bottom: 1px solid var(--g-edge);
+  background: var(--g-base);
+}
+.libindex__list { list-style: none; margin: 0; padding: 0; counter-reset: none; }
+.libindex__list li + li { border-top: 1px solid var(--g-edge); }
+.libindex__list a {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background var(--dur-1) var(--ease);
+}
+.libindex__list a:hover { background: var(--lift-soft); color: var(--ink); }
+.libindex__n {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--track-mono);
+  color: var(--ink-faint);
+}
+.libindex__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  letter-spacing: -0.015em;
+}
+.libindex__c {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--track-mono);
+  color: var(--brand-text);
+  background: var(--brand-soft);
+  border-radius: var(--r-pill);
+  padding: 0.3em 0.7em;
+}
+/* the largest group gets the emerald marker, so scale is visible at a glance */
+.libindex__list li:nth-child(3) .libindex__c { color: var(--lift-text); background: var(--lift-soft); }
+
+/* ── ACTIVITY CARD: give this page its own signature ──────
+   The rail becomes a full-height gradient edge and the number
+   of the activity is printed as a watermark, so the grid reads
+   as a catalogue rather than a wall of identical boxes.
+   ─────────────────────────────────────────────────────────── */
+.act::before {
+  width: 4px;
+  background: linear-gradient(to bottom,
+    var(--dot, var(--ink-ghost)),
+    color-mix(in srgb, var(--dot, var(--ink-ghost)) 30%, transparent));
+}
+.act__why {
+  border-left: 2px solid color-mix(in srgb, var(--dot, var(--ink-ghost)) 45%, transparent);
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--dot, var(--ink-ghost)) 5%, transparent),
+    transparent 70%);
+  padding: var(--s-3);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.act h3 { letter-spacing: -0.015em; }
+
+/* group header: a numbered plate, matching the index */
+.actgroup {
+  margin-top: var(--s-8);
+  padding-bottom: var(--s-4);
+  border-bottom: 2px solid var(--ink);
+  scroll-margin-top: 170px;
+}
+.actgroup__name { font-weight: 800; letter-spacing: -0.03em; font-size: 1.75rem; }
+.actgroup__n {
+  font-family: var(--font-mono);
+  color: var(--brand-text);
+  background: var(--brand-soft);
+  border-radius: var(--r-pill);
+  padding: 0.32em 0.8em;
+}

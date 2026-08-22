@@ -1,0 +1,113 @@
+/* Contact form — fields drawn as ruled entries on a sheet */
+
+.form__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--s-7);
+  align-items: start;
+}
+@media (max-width: 900px) { .form__grid { grid-template-columns: 1fr; gap: var(--s-6); } }
+
+.form {
+  background: var(--g-lifted);
+  border: 1px solid var(--g-edge);
+  border-radius: var(--r-md);
+  padding: var(--s-6);
+  display: grid;
+  gap: var(--s-4);
+  box-shadow: var(--sh-2);
+}
+@media (max-width: 520px) { .form { padding: var(--s-5); } }
+
+.field { display: grid; gap: var(--s-2); }
+.field label {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+.field__opt { text-transform: none; letter-spacing: 0; color: var(--ink-faint); }
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--g-base);
+  border: 1px solid var(--g-edge);
+  border-radius: var(--r-sm);
+  padding: 0.8rem 0.95rem;
+  width: 100%;
+  transition: border-color var(--dur-1) var(--ease),
+              box-shadow var(--dur-1) var(--ease);
+}
+.field textarea { resize: vertical; line-height: 1.55; }
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 20%, transparent);
+}
+.field input::placeholder,
+.field textarea::placeholder { color: var(--ink-ghost); }
+
+.field.is-bad input,
+.field.is-bad select,
+.field.is-bad textarea { border-color: #C2410C; }
+.field__err {
+  font-size: 0.8125rem;
+  color: #9A3412;
+  margin: 0;
+}
+
+.form__ok {
+  background: var(--grow-soft);
+  border: 1px solid var(--grow);
+  color: var(--grow-text);
+  border-radius: var(--r-sm);
+  padding: var(--s-3) var(--s-4);
+  margin: 0;
+  font-size: 0.9375rem;
+}
+.form__note {
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+  margin: 0;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--g-edge);
+}
+
+/* contact sidebar */
+.contactside {
+  background: var(--g-sunken);
+  border: 1px solid var(--g-edge);
+  border-radius: var(--r-md);
+  padding: var(--s-5);
+}
+.contactlist { margin: 0; display: grid; gap: var(--s-3); }
+.contactlist dt {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.contactlist dd { margin: 0 0 var(--s-2); font-size: 0.9375rem; word-break: break-word; }
+
+/* Reply expectation. A form with no backend and no stated response time
+   asks a worried parent to write into silence. Saying "two working days,
+   and phone if it is urgent" costs one paragraph and removes the doubt. */
+.contactside__reply {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+.contactside__reply .mono {
+  display: block;
+  margin-bottom: var(--s-2);
+  color: var(--ink-faint);
+}

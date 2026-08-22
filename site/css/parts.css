@@ -1,0 +1,371 @@
+/* ══════════════════════════════════════════════════════════
+   UNHEARD — components (premium)
+   Floating pill nav, hero with a rendered object, restrained
+   stage strip, stats, footer.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── NAV — floating pill, glass ─────────────────────────────── */
+.nav {
+  position: sticky;
+  top: var(--s-4);
+  z-index: 50;
+  margin-inline: auto;
+  padding-inline: var(--s-5);
+  max-width: var(--shell-wide);
+}
+.nav__in {
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+  height: 60px;
+  padding-inline: var(--s-4) var(--s-3);
+  background: rgba(255, 255, 255, 0.78);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+          backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid var(--g-edge);
+  border-radius: var(--r-pill);
+  box-shadow: var(--sh-2);
+  transition: box-shadow var(--dur-2) var(--ease);
+}
+.nav.is-stuck .nav__in { box-shadow: var(--sh-3); }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: var(--ink);
+  flex: none;
+}
+.brand__mark { width: 28px; height: 28px; flex: none; border-radius: 7px; }
+.brand__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+}
+.nav__links {
+  display: flex;
+  gap: var(--s-5);
+  margin-left: auto;
+  align-items: center;
+}
+.nav__links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color var(--dur-1) var(--ease);
+}
+.nav__links a:hover, .nav__links a[aria-current="page"] { color: var(--ink); }
+/* A .btn inside the nav keeps its own label colour. Equal-specificity
+   rules resolve by source order, so this must come AFTER the rules
+   above or the nav link colour wins and the CTA fails contrast. */
+.nav__links a.btn { color: var(--btn-fg); font-size: 0.875rem; padding: 0.78em 1.25em; }
+.nav__links a.btn:hover { color: var(--btn-fg); }
+.nav__toggle { display: none; }
+
+@media (max-width: 880px) {
+  .nav__links {
+    position: fixed;
+    inset: 84px var(--s-5) auto var(--s-5);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--g-lifted);
+    border: 1px solid var(--g-edge);
+    border-radius: var(--r-md);
+    box-shadow: var(--sh-4);
+    padding: var(--s-3) var(--s-5) var(--s-5);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
+  }
+  .nav__links.is-open { opacity: 1; transform: none; pointer-events: auto; }
+  .nav__links a { padding: var(--s-3) 0; border-bottom: 1px solid var(--g-edge); }
+  .nav__links .btn { margin-top: var(--s-4); }
+  .nav__toggle {
+    display: inline-flex;
+    margin-left: auto;
+    background: none;
+    border: 1px solid var(--g-edge);
+    border-radius: var(--r-pill);
+    padding: 0.5rem 0.9rem;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: var(--t-mono);
+    letter-spacing: var(--track-mono);
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+}
+
+/* ── HERO ───────────────────────────────────────────────────── */
+.hero { padding-block: var(--s-8) var(--s-9); position: relative; }
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: var(--s-7);
+  align-items: center;
+}
+@media (max-width: 980px) {
+  .hero__grid { grid-template-columns: 1fr; gap: var(--s-7); }
+}
+.hero__title { margin-bottom: var(--s-5); max-width: none; }
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+}
+/* proof sits immediately under the CTA, where hesitation happens */
+.hero__proof {
+  margin-top: var(--s-5);
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  max-width: 46ch;
+}
+.hero__proof strong { color: var(--ink); font-weight: 600; }
+
+/* ── THE HERO OBJECT ────────────────────────────────────────
+   A rendered object, oversized, with floating data chips over
+   it. The object is layered WITH the type, not beside it.
+   ─────────────────────────────────────────────────────────── */
+.figure {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 500px;
+}
+.figure__img {
+  width: 118%;
+  max-width: none;
+  height: auto;
+  filter: drop-shadow(0 34px 70px rgba(52, 26, 110, 0.30));
+}
+@media (max-width: 980px) {
+  .figure { min-height: 380px; }
+  .figure__img { width: 92%; max-width: 520px; }
+}
+/* the object sits on its own bloom, so it never floats on nothing */
+.figure::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 78%; aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(109, 62, 232, 0.24) 0%,
+    rgba(18, 163, 102, 0.10) 46%,
+    rgba(109, 62, 232, 0) 72%);
+}
+.figure > * { position: relative; z-index: 1; }
+
+/* a framed photograph, for the pages that use one */
+.shot {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--g-edge);
+  box-shadow: var(--sh-4);
+  background: var(--g-lifted);
+}
+.shot img { width: 100%; height: auto; display: block; }
+.shot figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: var(--s-3) var(--s-4);
+  border-top: 1px solid var(--g-edge);
+  background: var(--g-lifted);
+}
+
+/* ── STAGE STRIP — restrained, hairline-separated ─────────── */
+.stages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--g-edge);
+}
+@media (max-width: 900px) { .stages { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .stages { grid-template-columns: 1fr; } }
+
+.stage {
+  padding: var(--s-6) var(--s-5) var(--s-5);
+  border-right: 1px solid var(--g-edge);
+}
+.stage:first-child { padding-left: 0; }
+.stage:last-child { border-right: 0; padding-right: 0; }
+@media (max-width: 900px) {
+  .stage { padding-inline: var(--s-5); }
+  .stage:nth-child(2n) { border-right: 0; }
+  .stage:nth-child(n+3) { border-top: 1px solid var(--g-edge); }
+}
+@media (max-width: 560px) {
+  .stage { border-right: 0; padding-inline: 0; }
+  .stage + .stage { border-top: 1px solid var(--g-edge); }
+}
+.stage .num { margin-bottom: var(--s-4); }
+.stage h3 { margin-bottom: var(--s-2); font-size: 1.0625rem; }
+.stage p { color: var(--ink-soft); font-size: 0.9375rem; margin: 0; max-width: 34ch; }
+
+/* ── SECTION HEAD ───────────────────────────────────────────
+   Two-column: title left, supporting copy right. This is the
+   reference build's rhythm and it reads far more premium than
+   a stacked title + lede.
+   ─────────────────────────────────────────────────────────── */
+.head {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--s-7);
+  align-items: end;
+  margin-bottom: var(--s-8);
+}
+@media (max-width: 900px) {
+  .head { grid-template-columns: 1fr; gap: var(--s-4); align-items: start; }
+}
+.head .lede { margin-bottom: 0; }
+.head--solo { grid-template-columns: 1fr; max-width: 44rem; }
+.head--center { grid-template-columns: 1fr; max-width: 46rem; margin-inline: auto; text-align: center; }
+.head--center .slug { justify-content: center; }
+
+/* ── STATS ──────────────────────────────────────────────────── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-5);
+  border-top: 1px solid var(--g-edge);
+  border-bottom: 1px solid var(--g-edge);
+  padding-block: var(--s-6);
+}
+@media (max-width: 780px) { .stats { grid-template-columns: repeat(2, 1fr); gap: var(--s-6) var(--s-4); } }
+.stat__n {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 2.9rem);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  display: block;
+}
+.stat__k {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: var(--s-3);
+  display: block;
+}
+
+/* ── NIGHT SECTION — the honest moment ────────────────────── */
+.night {
+  background: var(--g-base);
+  color: var(--ink-body);
+  padding-block: var(--s-9);
+  position: relative;
+  overflow: hidden;
+}
+.night h2 { color: var(--ink); }
+.night .lede { color: var(--ink-soft); }
+/* a single soft bloom so the dark ground is not flat */
+.night::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 60vw; height: 60vw;
+  max-width: 800px; max-height: 800px;
+  top: -30%; right: -10%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(124, 92, 214, 0.16) 0%, rgba(124, 92, 214, 0) 68%);
+  pointer-events: none;
+}
+.night > * { position: relative; z-index: 1; }
+
+/* ── CLOSING ────────────────────────────────────────────────── */
+.close {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--s-7);
+  align-items: center;
+}
+@media (max-width: 880px) { .close { grid-template-columns: 1fr; gap: var(--s-6); } }
+
+/* ── MODEL CARDS ────────────────────────────────────────────── */
+.modelcard {
+  border-top: 1px solid var(--g-edge);
+  padding-top: var(--s-4);
+}
+.modelcard .mono { display: block; margin-bottom: var(--s-2); }
+.modelcard h3 { font-size: 1rem; }
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+.foot {
+  border-top: 1px solid var(--g-edge);
+  padding-block: var(--s-8) var(--s-6);
+  margin-top: var(--s-9);
+}
+.foot__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: var(--s-6);
+  margin-bottom: var(--s-8);
+}
+@media (max-width: 760px) { .foot__grid { grid-template-columns: 1fr; gap: var(--s-6); } }
+.foot h4 {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+  margin-bottom: var(--s-4);
+}
+.foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-3); }
+.foot a { color: var(--ink-soft); text-decoration: none; font-size: 0.9375rem; }
+.foot a:hover { color: var(--ink); }
+.foot__base {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--g-edge);
+  padding-top: var(--s-5);
+}
+.foot__note { font-size: 0.875rem; color: var(--ink-faint); margin: 0; }
+
+/* green mixed through, so the page is two-hue rather than lavender-only */
+.stat--grow .stat__n { color: var(--grow-text); }
+.modelcard--grow { border-top-color: var(--grow); }
+.modelcard { border-top-width: 2px; }
+.modelcard:not(.modelcard--grow) { border-top-color: var(--brand); }
+
+/* ── AMBER, SPREAD ──────────────────────────────────────────
+   Amber marks the warm human moments: a free thing, the child's
+   own work, the person behind the product, the human route in.
+   It never marks "verified" (emerald) or a primary action
+   (violet). Three per screen remains the ceiling. */
+.stat--lift .stat__n { color: var(--lift-text); }
+.modelcard--lift { border-top-color: var(--lift); }
+/* The rule before a section label, tinted where the section is warm.
+   A 22x1px hairline is too small for a hue to register, so a tinted
+   slug also gets a small square terminal and coloured text: the
+   colour has to be visible to be doing any work. */
+.slug--lift, .slug--grow { color: var(--tint-text); }
+.slug--lift::before, .slug--grow::before {
+  background: var(--tint);
+  height: 3px;
+  border-radius: 2px;
+}
+.slug--lift { --tint: var(--lift); --tint-text: var(--lift-text); }
+.slug--grow { --tint: var(--grow); --tint-text: var(--grow-text); }
+/* a warm rail on a card, for the reassuring items that carry no numeral */
+.card--liftrail { border-top: 2px solid var(--lift); }
+.card--growrail { border-top: 2px solid var(--grow); }

@@ -1,0 +1,95 @@
+/* ══════════════════════════════════════════════════════════
+   The kit contents as a clean panel. Crisp rows, precise
+   numerals, geometric ticks. No hand-drawn irregularity.
+   ══════════════════════════════════════════════════════════ */
+
+.sheetcard {
+  --accent: var(--brand);
+  --accent-text: var(--brand-text);
+  --accent-soft: var(--brand-soft);
+  background: var(--g-lifted);
+  border: 1px solid var(--g-edge);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  transition: box-shadow var(--dur-2) var(--ease),
+              border-color var(--dur-2) var(--ease);
+}
+.sheetcard:hover { box-shadow: var(--sh-3); border-color: #D8D2E8; }
+
+.sheetcard--grow {
+  --accent: var(--grow);
+  --accent-text: var(--grow-text);
+  --accent-soft: var(--grow-soft);
+}
+
+.sheetcard__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--s-5);
+  border-bottom: 1px solid var(--g-edge);
+}
+.sheetcard__title {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--track-mono);
+  text-transform: uppercase;
+  color: var(--accent-text);
+  font-weight: 500;
+}
+.sheetcard__n {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-faint);
+}
+
+.checklist { list-style: none; margin: 0; padding: 0; }
+.checklist li {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: var(--s-4);
+  padding: 0 var(--s-5);
+  min-height: 52px;
+  border-bottom: 1px solid var(--g-edge);
+  font-size: 0.9375rem;
+  color: var(--ink-body);
+  transition: background var(--dur-1) var(--ease);
+}
+.checklist li:last-child { border-bottom: 0; }
+.checklist li:hover { background: var(--g-base); }
+
+.checklist__i {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  /* ink-ghost is rules/disabled ONLY, never text (BRAND.md) */
+  color: var(--ink-faint);
+  letter-spacing: var(--track-mono);
+}
+/* a precise round tick, filled with the panel's accent */
+.checklist__box {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.checklist__box svg { width: 11px; height: 11px; display: block; }
+.checklist__box path {
+  stroke: var(--accent-text);
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* the amber panel — the child's own sheet, the warm one */
+.sheetcard--lift {
+  --accent: var(--lift);
+  --accent-text: var(--lift-text);
+  --accent-soft: var(--lift-soft);
+}

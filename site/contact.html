@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talk to us | UNHEARD</title>
+<meta name="description" content="Order the UNHEARD kit, ask about workshops, or join the conversation series. Phone 9958611717.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/app.css">
+<link rel="stylesheet" href="/css/parts.css">
+<link rel="stylesheet" href="/css/material.css">
+<link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="shell nav__in">
+    <a class="brand" href="/" aria-label="UNHEARD home"><svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="var(--ink)"/>
+        <path d="M7 14h18M7 20h18" stroke="var(--g-base)" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
+        <path d="M9.2 20c3.3 0 2.8-10.2 6.5-10.2s3.1 6.9 6.3 6.9" fill="none" stroke="var(--g-base)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg><span class="brand__name">UNHEARD</span></a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="nav__links" id="navLinks">
+      <a href="/kit">The Kit</a>
+      <a href="/activities">Activities</a>
+      <a href="/about">About</a>
+      <a class="btn btn--brand" href="/contact">Talk to us</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="section--tight ruled">
+    <div class="shell">
+      <p class="slug">Get in touch</p>
+      <h1 class="d1" style="max-width:16ch;margin-bottom:var(--s-5)">Tell us what you are seeing.</h1>
+      <p class="lede">Whether you are a parent, an educator, a counsellor, or someone who works with children, we would rather have the conversation than the transaction.</p>
+    </div>
+  </section>
+
+  <section style="padding-bottom:var(--s-8)">
+    <div class="shell form__grid">
+      <form class="form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+          <p class="field__err" id="err-f-name" hidden>Please tell us your name.</p>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone number</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          <p class="field__err" id="err-f-phone" hidden>We need a number we can reach you on.</p>
+        </div>
+        <div class="field">
+          <label for="f-email">Email address</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+          <p class="field__err" id="err-f-email" hidden>That email does not look right.</p>
+        </div>
+        <div class="field">
+          <label for="f-role">I am a</label>
+          <select id="f-role" name="role" required>
+            <option value="">Select one</option>
+            <option>Parent</option>
+            <option>Educator / teacher</option>
+            <option>School / institution</option>
+            <option>Counsellor / therapist</option>
+            <option>Other</option>
+          </select>
+          <p class="field__err" id="err-f-role" hidden>Please pick one.</p>
+        </div>
+        <div class="field">
+          <label for="f-interest">What are you interested in</label>
+          <select id="f-interest" name="interest" required>
+            <option value="">Choose an option</option>
+            <option>Buying the UNHEARD kit (₹1,200)</option>
+            <option>Parent webinar (₹499)</option>
+            <option>Workshops and boot camps</option>
+            <option>School partnership</option>
+            <option>Being a guest on the conversation series</option>
+            <option>Just exploring</option>
+          </select>
+          <p class="field__err" id="err-f-interest" hidden>Please pick one.</p>
+        </div>
+        <div class="field">
+          <label for="f-msg">Message <span class="field__opt">optional</span></label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="If you want, tell us one thing you have noticed about your child."></textarea>
+        </div>
+        <button class="btn btn--brand" type="submit">Send message</button>
+        <p class="form__ok" id="formOk" hidden role="status">Thank you. We will be in touch soon.</p>
+        <p class="form__note">This form is not connected to a backend in this build, so nothing is sent yet. Until it is, please use the phone number or email beside it.</p>
+      </form>
+
+      <aside class="contactside">
+        <h2 class="d3" style="margin-bottom:var(--s-4)">Reach us directly</h2>
+        <dl class="contactlist">
+          <dt>Phone</dt><dd><a href="tel:9958611717">9958611717</a></dd>
+          <dt>Email</dt><dd><a href="mailto:unheard.corporation@gmail.com">unheard.corporation@gmail.com</a></dd>
+          <dt>Instagram</dt><dd><a href="https://instagram.com/unheardco" rel="noopener">@unheardco</a></dd>
+        </dl>
+        <hr class="rule" style="margin-block:var(--s-5)">
+        <h3 class="d3" style="margin-bottom:var(--s-3)">The conversation series</h3>
+        <p style="color:var(--ink-soft);font-size:.9375rem;margin-bottom:0">If you are a parent, educator or counsellor with a story worth hearing, we record short conversations on Zoom and share them. Pick that option in the form and we will send details.</p>
+        <hr class="rule" style="margin-block:var(--s-5)">
+        <p class="contactside__reply">
+          <span class="mono">Reply time</span>
+          Usually within two working days. If it is urgent, phone rather than
+          write: it is a small team and the phone is answered faster than the
+          inbox.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- The page previously ended under the form with ~380px of empty ground.
+       A parent who has scrolled this far without filling it in is hesitating,
+       so this is where the hesitation gets answered: what happens next, and
+       that they need not write at all. -->
+  <section class="section" style="background:var(--g-sunken)">
+    <div class="shell">
+      <div class="head">
+        <p class="slug slug--lift">Before you write</p>
+        <h2 class="d2">You do not have to talk to us to start.</h2>
+      </div>
+      <div class="grid grid--3">
+        <article class="card card--liftrail">
+          <h3 class="d3" style="margin-bottom:var(--s-2)">The activities are free</h3>
+          <p style="margin:0;color:var(--ink-soft)">All 45, with every source linked. No sign-up and no email needed. If they are all you ever use, that is a good outcome.</p>
+          <p style="margin:var(--s-4) 0 0"><a href="/activities">Open the library</a></p>
+        </article>
+        <article class="card">
+          <h3 class="d3" style="margin-bottom:var(--s-2)">We will say if we are wrong for you</h3>
+          <p style="margin:0;color:var(--ink-soft)">If what you describe needs a paediatrician, a psychologist or a special educator, we will tell you that rather than sell you a box.</p>
+        </article>
+        <article class="card card--growrail">
+          <h3 class="d3" style="margin-bottom:var(--s-2)">Nothing is shared</h3>
+          <p style="margin:0;color:var(--ink-soft)">What you write about your child stays between us. We do not publish it and we do not pass it on.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="/" style="margin-bottom: var(--s-3);"><svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect width="32" height="32" rx="7" fill="var(--ink)"/>
+        <path d="M7 14h18M7 20h18" stroke="var(--g-base)" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
+        <path d="M9.2 20c3.3 0 2.8-10.2 6.5-10.2s3.1 6.9 6.3 6.9" fill="none" stroke="var(--g-base)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg><span class="brand__name">UNHEARD</span></a>
+        <p class="foot__note" style="max-width: 30ch;">Listening to children who learn differently.</p>
+      </div>
+      <div><h4>Explore</h4><ul>
+        <li><a href="/kit">The kit</a></li>
+        <li><a href="/activities">Activity library</a></li>
+        <li><a href="/about">About &amp; research</a></li>
+        <li><a href="/contact">Talk to us</a></li>
+      </ul></div>
+      <div><h4>Contact</h4><ul>
+        <li><a href="tel:9958611717">9958611717</a></li>
+        <li><a href="mailto:unheard.corporation@gmail.com">unheard.corporation@gmail.com</a></li>
+        <li><a href="https://instagram.com/unheardco" rel="noopener">@unheardco</a></li>
+      </ul></div>
+    </div>
+    <div class="foot__base">
+      <p class="foot__note">&copy; 2025 UNHEARD</p>
+      <p class="foot__note">Not a diagnostic tool. Not a substitute for professional advice.</p>
+    </div>
+  </div>
+</footer>
+<script src="/js/app.js"></script>
+<script src="/js/form.js"></script>
+</body>
+</html>
