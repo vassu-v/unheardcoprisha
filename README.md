@@ -1,7 +1,8 @@
 # UNHEARD — website rebuild
 
 A rebuild of [unheardnew.vercel.app](https://unheardnew.vercel.app/), designed
-from scratch using the method in [`playbook/`](playbook/).
+from scratch. The method notes and design references used to build it are kept
+locally and are not part of this repository.
 
 **Read first:** [`DESIGN-BRIEF.md`](DESIGN-BRIEF.md) is the research and the
 reasoning. [`BRAND.md`](BRAND.md) is the identity it produced. Everything in
