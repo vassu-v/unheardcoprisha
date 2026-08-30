@@ -33,6 +33,7 @@
     </nav>
   </div>
 </header>
+<div class="nav__scrim" id="navScrim" aria-hidden="true"></div>
 <main id="main">
   <section class="section--tight ruled">
     <div class="shell">
@@ -101,6 +102,22 @@
           <p style="margin-bottom:0"><a href="/contact">Get in touch</a></p>
         </div>
       </div>
+
+      <div class="team">
+        <article class="teammate">
+          <img class="teammate__photo" src="/assets/contributor-shorya.png"
+               width="120" height="120" loading="lazy" decoding="async"
+               alt="Shoryavardhaan Gupta, technical contributor to UNHEARD.">
+          <div>
+            <h3 class="d3" style="margin-bottom:var(--s-1)">Shoryavardhaan Gupta</h3>
+            <p class="mono" style="margin-bottom:var(--s-3)">Technical Contributor</p>
+            <div class="teammate__links">
+              <a href="https://linkedin.com/in/shoryavardhaan" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/vassu-v" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -148,6 +165,12 @@
       <p class="foot__note">&copy; 2025 UNHEARD</p>
       <p class="foot__note">Not a diagnostic tool. Not a substitute for professional advice.</p>
     </div>
+  </div>
+  <svg class="seal" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+    <path id="sealPath" d="M 100,100 m -92,0 a 92,92 0 1,1 184,0 a 92,92 0 1,1 -184,0" fill="none"/>
+    <circle class="seal__ring" cx="100" cy="100" r="92" fill="none"/>
+    <text><textPath href="#sealPath" class="seal__text">OBSERVE &#8226; DISCOVER &#8226; SUPPORT &#8226; GROW &#8226; </textPath></text>
+  </svg>
   </div>
 </footer>
 <script src="/js/app.js"></script>

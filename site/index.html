@@ -37,6 +37,7 @@
     </nav>
   </div>
 </header>
+<div class="nav__scrim" id="navScrim" aria-hidden="true"></div>
 
 <main id="main">
 
@@ -74,14 +75,23 @@
     </div>
   </section>
 
-  <!-- ══ PROOF ═════════════════════════════════════════════ -->
+  <!-- ══ PROOF ═════════════════════════════════════════════
+       One dominant figure, not four equal boxes: ₹1,200 with no
+       subscription is the fact that actually separates UNHEARD
+       from a category built on recurring fees, so it gets the
+       space. The rest support it rather than compete with it. -->
   <section class="section--tight">
     <div class="shell">
-      <div class="stats reveal">
-        <div class="stat"><span class="stat__n" data-count="60" data-suffix="+">60+</span><span class="stat__k">Parent &amp; child surveys</span></div>
-        <div class="stat stat--grow"><span class="stat__n" data-count="45">45</span><span class="stat__k">Sourced activities</span></div>
-        <div class="stat"><span class="stat__n" data-count="5">5</span><span class="stat__k">Global teaching models</span></div>
-        <div class="stat stat--lift"><span class="stat__n" data-count="1200" data-prefix="₹">₹1,200</span><span class="stat__k">One-time, no subscription</span></div>
+      <div class="proof reveal">
+        <div class="proof__lead">
+          <span class="proof__n proof__n--digital" data-count="1200" data-prefix="₹">₹1,200</span>
+          <span class="proof__k">One-time. No subscription, ever.</span>
+        </div>
+        <div class="proof__rest">
+          <div class="proof__row"><span class="proof__rn" data-count="60" data-suffix="+">60+</span><span class="proof__rk">Parent &amp; child surveys</span></div>
+          <div class="proof__row proof__row--grow"><span class="proof__rn" data-count="45">45</span><span class="proof__rk">Sourced activities</span></div>
+          <div class="proof__row"><span class="proof__rn" data-count="5">5</span><span class="proof__rk">Global teaching models</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -97,21 +107,27 @@
         <p class="lede">We surveyed 60+ parents and children, sat with NGOs, and spoke to doctors and child development professionals. The same three things came back every time.</p>
       </div>
 
-      <div class="grid grid--3">
-        <article class="card card--lift reveal">
-          <span class="num">01</span>
-          <h3 class="d3" style="margin:var(--s-4) 0 var(--s-3)">A classroom built for one kind of learner</h3>
-          <p style="margin:0;color:var(--ink-soft)">A child who thinks, moves, or processes differently gets read as distracted or slow. The label arrives long before anyone has looked closely.</p>
+      <div class="manifesto">
+        <article class="mrow reveal">
+          <span class="mrow__n">01</span>
+          <div class="mrow__body">
+            <h3 class="d3">A classroom built for one kind of learner</h3>
+            <p>A child who thinks, moves, or processes differently gets read as distracted or slow. The label arrives long before anyone has looked closely.</p>
+          </div>
         </article>
-        <article class="card card--lift reveal">
-          <span class="num num--grow">02</span>
-          <h3 class="d3" style="margin:var(--s-4) 0 var(--s-3)">Parents who noticed, and were waved away</h3>
-          <p style="margin:0;color:var(--ink-soft)">Most parents already know something is different. What they do not have is language for it, or a record that anyone else will take seriously.</p>
+        <article class="mrow mrow--grow reveal">
+          <span class="mrow__n">02</span>
+          <div class="mrow__body">
+            <h3 class="d3">Parents who noticed, and were waved away</h3>
+            <p>Most parents already know something is different. What they do not have is language for it, or a record that anyone else will take seriously.</p>
+          </div>
         </article>
-        <article class="card card--lift reveal">
-          <span class="num num--lift">03</span>
-          <h3 class="d3" style="margin:var(--s-4) 0 var(--s-3)">Support that starts at an assessment</h3>
-          <p style="margin:0;color:var(--ink-soft)">The available options are clinical, expensive, or both. There is very little between doing nothing and booking an evaluation.</p>
+        <article class="mrow mrow--lift reveal">
+          <span class="mrow__n">03</span>
+          <div class="mrow__body">
+            <h3 class="d3">Support that starts at an assessment</h3>
+            <p>The available options are clinical, expensive, or both. There is very little between doing nothing and booking an evaluation.</p>
+          </div>
         </article>
       </div>
 
@@ -303,6 +319,11 @@
       <p class="foot__note">Not a diagnostic tool. Not a substitute for professional advice.</p>
     </div>
   </div>
+  <svg class="seal" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+    <path id="sealPath" d="M 100,100 m -92,0 a 92,92 0 1,1 184,0 a 92,92 0 1,1 -184,0" fill="none"/>
+    <circle class="seal__ring" cx="100" cy="100" r="92" fill="none"/>
+    <text><textPath href="#sealPath" class="seal__text">OBSERVE &#8226; DISCOVER &#8226; SUPPORT &#8226; GROW &#8226; </textPath></text>
+  </svg>
 </footer>
 
 <script src="/js/app.js"></script>

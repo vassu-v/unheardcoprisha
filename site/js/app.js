@@ -33,18 +33,28 @@
 (function navToggle() {
   const btn = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
+  const scrim = document.getElementById('navScrim');
   if (!btn || !links) return;
+  const close = () => {
+    links.classList.remove('is-open');
+    if (scrim) scrim.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.textContent = 'Menu';
+  };
   btn.addEventListener('click', () => {
     const open = links.classList.toggle('is-open');
+    if (scrim) scrim.classList.toggle('is-open', open);
     btn.setAttribute('aria-expanded', String(open));
     btn.textContent = open ? 'Close' : 'Menu';
   });
   links.addEventListener('click', e => {
     if (e.target.tagName !== 'A') return;
-    links.classList.remove('is-open');
-    btn.setAttribute('aria-expanded', 'false');
-    btn.textContent = 'Menu';
+    close();
   });
+  // tapping the dimmed page behind the menu closes it — otherwise the
+  // menu looked like it was blocking clicks on the page underneath
+  // with no way out except re-tapping the toggle.
+  if (scrim) scrim.addEventListener('click', close);
 })();
 
 (function reveal() {

@@ -19,7 +19,8 @@ const nav = a => `
       <a class="btn btn--brand" href="/contact">Talk to us</a>
     </nav>
   </div>
-</header>`;
+</header>
+<div class="nav__scrim" id="navScrim" aria-hidden="true"></div>`;
 
 const foot = `
 <footer class="foot">
@@ -45,6 +46,12 @@ const foot = `
       <p class="foot__note">&copy; 2025 UNHEARD</p>
       <p class="foot__note">Not a diagnostic tool. Not a substitute for professional advice.</p>
     </div>
+  </div>
+  <svg class="seal" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+    <path id="sealPath" d="M 100,100 m -92,0 a 92,92 0 1,1 184,0 a 92,92 0 1,1 -184,0" fill="none"/>
+    <circle class="seal__ring" cx="100" cy="100" r="92" fill="none"/>
+    <text><textPath href="#sealPath" class="seal__text">OBSERVE &#8226; DISCOVER &#8226; SUPPORT &#8226; GROW &#8226; </textPath></text>
+  </svg>
   </div>
 </footer>`;
 
@@ -261,6 +268,22 @@ const about = head('About and Research | UNHEARD','How UNHEARD was built: 60+ pa
           <p style="color:var(--ink-body);max-width:52ch">Prisha built UNHEARD after listening to parents, children, educators and experts who kept describing the same gap: children who learn differently are noticed late, if at all, and the people closest to them have no structured way to record what they are already seeing. The kit is her answer to that gap, and deliberately a modest one.</p>
           <p style="margin-bottom:0"><a href="/contact">Get in touch</a></p>
         </div>
+      </div>
+
+      <div class="team">
+        <article class="teammate">
+          <img class="teammate__photo" src="/assets/contributor-shorya.png"
+               width="120" height="120" loading="lazy" decoding="async"
+               alt="Shoryavardhaan Gupta, technical contributor to UNHEARD.">
+          <div>
+            <h3 class="d3" style="margin-bottom:var(--s-1)">Shoryavardhaan Gupta</h3>
+            <p class="mono" style="margin-bottom:var(--s-3)">Technical Contributor</p>
+            <div class="teammate__links">
+              <a href="https://linkedin.com/in/shoryavardhaan" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/vassu-v" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>

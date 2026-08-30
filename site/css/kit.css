@@ -250,6 +250,36 @@
   flex: none;
 }
 
+/* ── TEAM — technical contributors, listed under the founder ──
+   Same "show the person" logic as .founder, one size down and
+   without the amber ring: amber marks the founder's own warm-
+   human-moment role specifically, not every person on the page. */
+.team {
+  margin-top: var(--s-7);
+  padding-top: var(--s-7);
+  border-top: 1px solid var(--g-edge);
+}
+.teammate {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-5);
+  align-items: center;
+}
+@media (max-width: 620px) { .teammate { grid-template-columns: 1fr; } }
+.teammate__photo {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--r-md);
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid var(--g-edge);
+  box-shadow: 0 0 0 3px var(--g-base), 0 0 0 5px var(--brand), var(--sh-2);
+  background: var(--g-sunken);
+  flex: none;
+}
+.teammate__links { display: flex; gap: var(--s-4); }
+.teammate__links a { font-size: 0.9375rem; }
+
 /* typographic fallback, used until a photo exists */
 .founder__plate {
   width: 104px;

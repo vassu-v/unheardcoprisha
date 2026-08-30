@@ -22,7 +22,8 @@ const nav = (active) => `
       <a class="btn btn--signal" href="/contact">Talk to us</a>
     </nav>
   </div>
-</header>`;
+</header>
+<div class="nav__scrim" id="navScrim" aria-hidden="true"></div>`;
 
 const foot = `
 <footer class="foot">
@@ -61,6 +62,12 @@ const foot = `
       <p class="foot__note">&copy; 2025 UNHEARD</p>
       <p class="foot__note">Not a diagnostic tool. Not a substitute for professional advice.</p>
     </div>
+  </div>
+  <svg class="seal" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+    <path id="sealPath" d="M 100,100 m -92,0 a 92,92 0 1,1 184,0 a 92,92 0 1,1 -184,0" fill="none"/>
+    <circle class="seal__ring" cx="100" cy="100" r="92" fill="none"/>
+    <text><textPath href="#sealPath" class="seal__text">OBSERVE &#8226; DISCOVER &#8226; SUPPORT &#8226; GROW &#8226; </textPath></text>
+  </svg>
   </div>
 </footer>`;
 

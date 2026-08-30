@@ -144,7 +144,9 @@
               box-shadow var(--dur-2) var(--ease),
               border-color var(--dur-2) var(--ease);
 }
-.act:hover { transform: translateY(-3px); box-shadow: var(--sh-3); border-color: var(--ink-ghost); }
+/* lift + ambient brand-tinted shadow on hover, not a generic ink shadow —
+   the card should feel like it belongs to this palette when it rises */
+.act:hover { transform: translateY(-4px); box-shadow: var(--sh-brand); border-color: var(--brand); }
 /* the domain rail — colour as legend */
 .act::before {
   content: '';

@@ -162,7 +162,7 @@ a:hover { color: var(--ink); }
 .btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
 
 .btn--brand { --btn-bg: var(--brand); --btn-fg: var(--on-brand); box-shadow: var(--sh-brand); }
-.btn--brand:hover { box-shadow: 0 14px 40px -8px rgba(124, 92, 214, 0.44); }
+.btn--brand:hover { box-shadow: 0 14px 40px -8px rgba(178, 156, 228, 0.55); }
 .btn--grow  { --btn-bg: var(--grow);  --btn-fg: var(--on-grow); box-shadow: var(--sh-grow); }
 .btn--lift  { --btn-bg: var(--lift);  --btn-fg: var(--on-lift); box-shadow: var(--sh-lift); }
 
