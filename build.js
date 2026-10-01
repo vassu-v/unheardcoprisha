@@ -1,4 +1,6 @@
-// node build.js  ->  index.html, kit.html, activities.html, about.html, contact.html, 404.html
+// node build.js  ->  dist/  (the only folder that gets served or deployed)
+//   dist/index.html, kit.html, activities.html, about.html, contact.html, 404.html
+//   dist/css, dist/js, dist/assets, dist/brand/swatches.html
 //
 // Each file in src/pages/ is a page body. Its first line is a meta comment:
 //   <!--meta {"title": "...", "desc": "...", "nav": "kit"}-->
@@ -9,6 +11,12 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 
 const ROOT = __dirname;
+const OUT = path.join(ROOT, 'dist');
+fs.rmSync(OUT, { recursive: true, force: true });
+fs.mkdirSync(OUT, { recursive: true });
+for (const dir of ['css', 'js', 'assets']) fs.cpSync(path.join(ROOT, dir), path.join(OUT, dir), { recursive: true });
+fs.mkdirSync(path.join(OUT, 'brand'));
+fs.copyFileSync(path.join(ROOT, 'brand/swatches.html'), path.join(OUT, 'brand/swatches.html'));
 const shapes = JSON.parse(execFileSync(process.execPath, [path.join(ROOT, 'shapes.js')], { encoding: 'utf8' }));
 const data = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/activities.json'), 'utf8'));
 
@@ -34,8 +42,8 @@ const head = meta => `<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add('js')</script>
 </head>`;
 
@@ -48,12 +56,12 @@ const symbols = `<svg width="0" height="0" style="position:absolute" aria-hidden
 const nav = active => `<a class="skip" href="#main">Skip to content</a>
 <header class="nav" id="nav">
   <div class="wrap nav__in">
-    <a class="logo" href="index.html" aria-label="UNHEARD home">Unheard</a>
+    <a class="logo" href="/" aria-label="UNHEARD home">Unheard</a>
     <ul class="nav__links" id="navLinks">
 ${NAV.map(([id, href, label]) => `      <li><a href="${href}"${id === active ? ' aria-current="page"' : ''}>${label}</a></li>`).join('\n')}
-      <li class="nav__menu-cta"><a class="btn" href="kit.html">Get the kit · ₹1,200</a></li>
+      <li class="nav__menu-cta"><a class="btn" href="/kit">Get the kit · ₹1,200</a></li>
     </ul>
-    <a class="btn btn--sm nav__cta" href="kit.html">Get the kit · ₹1,200</a>
+    <a class="btn btn--sm nav__cta" href="/kit">Get the kit · ₹1,200</a>
     <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">
       <span class="sr-only">Menu</span>
       <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
@@ -65,16 +73,16 @@ const foot = `<footer class="foot">
   <div class="wrap">
     <div class="foot__grid">
       <div>
-        <a class="logo" href="index.html">Unheard</a>
+        <a class="logo" href="/">Unheard</a>
         <p class="foot__line">Nobody knows your child better than you do. We give you somewhere to write it down.</p>
       </div>
       <div>
         <h4>Explore</h4>
         <ul>
-          <li><a href="kit.html">The kit</a></li>
-          <li><a href="activities.html">Activity library</a></li>
-          <li><a href="about.html">About &amp; research</a></li>
-          <li><a href="contact.html">Talk to us</a></li>
+          <li><a href="/kit">The kit</a></li>
+          <li><a href="/activities">Activity library</a></li>
+          <li><a href="/about">About &amp; research</a></li>
+          <li><a href="/contact">Talk to us</a></li>
         </ul>
       </div>
       <div>
@@ -92,7 +100,7 @@ const foot = `<footer class="foot">
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
 `;
@@ -146,6 +154,6 @@ for (const file of fs.readdirSync(pagesDir).filter(f => f.endsWith('.html'))) {
     return tokens[k];
   });
   const html = `${head(meta)}\n<body${meta.bodyClass ? ` class="${meta.bodyClass}"` : ''}>\n${symbols}\n${nav(meta.nav)}\n<main id="main">\n${body.trim()}\n</main>\n${foot}`;
-  fs.writeFileSync(path.join(ROOT, file), html);
-  console.log('built', file);
+  fs.writeFileSync(path.join(OUT, file), html);
+  console.log('built dist/' + file);
 }
