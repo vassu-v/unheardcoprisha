@@ -93,7 +93,7 @@
     apply();
   });
 
-  // deep links from the home and about pages: activities.html?model=japan
+  // deep links from the home and about pages: /activities?model=japan
   var params = new URLSearchParams(location.search);
   ['model', 'domain'].forEach(function (g) {
     var v = params.get(g);

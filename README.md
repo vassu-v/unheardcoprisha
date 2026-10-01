@@ -5,34 +5,38 @@ A self-contained multi-page site. Nothing here depends on `../site/` or
 framework and no npm dependencies.
 
 ```bash
-npm run dev     # build + serve -> http://localhost:4400  (no npm install needed)
-npm run build   # src/pages + data -> dist/
-npm start       # serve dist/ only
+npm run dev     # http://localhost:4400  (no install, no build)
+npm run check   # render every page + fail on any internal .html link
 ```
 
-URLs are clean: `/`, `/kit`, `/activities`, `/about`, `/contact`. `serve.js`
-mirrors Vercel `cleanUrls`. `/kit.html` and `/kit/` redirect (308) to `/kit`,
-and unknown paths get the 404 page.
+There is **no build step**. `api/router.js` renders each page on request from
+`src/pages/` + `data/`, and redirects any `.html` / trailing-slash URL (308) to its
+clean route: `/`, `/kit`, `/activities`, `/about`, `/contact`. Unknown paths
+get the 404 page. Locally, edits show on refresh.
 
-**Deploying to Vercel:** create a project with **Root Directory = `redesign`**.
-`redesign/vercel.json` runs `node build.js` and serves `dist/`. The repo-root
-`vercel.json` (which publishes `site/`) is untouched.
+**Vercel:** `vercel.json` serves `public/` (css, js, assets) as static files and
+rewrites everything else to the `api/router` Node function. Nothing to
+configure: no build command, no output folder to generate.
+
+**Guard:** `lib/render.js` refuses to render a page containing an internal
+`.html` link, and `npm run check` scans the sources for them. Page URLs are
+defined in one place, `ROUTES` in `lib/render.js`.
 
 The full brand system, vision and process log are in [brand/](brand/).
 
 ## Layout
 
 ```
+api/router.js     the router: Vercel function + used by serve.js locally
+lib/render.js     page renderer, ROUTES table, clean-link guard
+lib/shapes.js     seeded brush-stroke geometry
+lib/check.js      npm run check
 src/pages/        page bodies: index, kit, activities, about, contact, 404
 data/             activities.json: 45 activities, 5 models, 5 domains
-css/style.css     tokens + every component
-js/main.js        nav, scroll reveal, library filters, contact form
-assets/           photos, kid stickers, favicon
-shapes.js         seeded brush-stroke geometry
-build.js          wraps each page in shared head/nav/footer, renders tokens
-dist/             GENERATED + served: the only public folder (gitignored)
-serve.js          local router, same URL rules as Vercel
-vercel.json       buildCommand, outputDirectory dist, cleanUrls
+public/           css, js, assets: the only static files served
+brand/            brand docs + swatches (served at /brand/swatches)
+serve.js          local server (public/ + router)
+vercel.json       static public/, everything else -> api/router
 ```
 
 The first line of each page is a meta comment:
@@ -44,16 +48,15 @@ Tokens available in page bodies:
 - **Activity data:** `{{activityCount}}`, `{{activities}}`, `{{modelChips}}`,
   `{{domainChips}}`, `{{domainKey}}`, `{{modelCards}}`
 
-To add or edit an activity, change `data/activities.json` and rebuild.
+To add or edit an activity, change `data/activities.json`. No rebuild needed.
 
 ## Notes
 
-- **Activity library:** the 45 cards are rendered at build time, so the library
+- **Activity library:** the 45 cards are rendered on the server, so the library
   works without JavaScript. JS adds search, filtering by model and by domain,
   and `?model=` / `?domain=` deep links.
 - **Contact form:** there is no backend. The form validates, then hands the
   message to the visitor's own email app, and says on screen that nothing has
   been sent. `?interest=kit|webinar|workshops` preselects the topic.
 - **Links and assets** are root-relative (`/kit`, `/css/style.css`), so the site
-  needs a server (`npm run dev` or Vercel). Opening files directly via `file://`
-  is no longer supported.
+  needs the server (`npm run dev` or Vercel).
