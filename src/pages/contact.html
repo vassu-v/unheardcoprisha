@@ -1,0 +1,124 @@
+<!--meta {"title": "Talk to us — UNHEARD", "desc": "Tell us what you are seeing. Parents, educators, counsellors and schools can reach UNHEARD by phone, email or Instagram.", "nav": "contact"}-->
+
+<!-- ============ HERO ============ -->
+<section class="hero hero--page">
+  <div class="deco" style="right:-60px; top:-30px; width:280px; height:240px; opacity:.8">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="{{splat}}" fill="var(--butter)"/></svg>
+  </div>
+  <div class="wrap page-hero">
+    <span class="tag">Get in touch</span>
+    <h1 class="display display--d1 hero__title">Tell us what you are seeing.</h1>
+    <p class="lead">Whether you are a parent, an educator, a counsellor, or someone who works with children, we would rather have the conversation than the transaction.</p>
+  </div>
+</section>
+
+<!-- ============ FORM + DIRECT ============ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap contact">
+    <form class="form reveal" id="contactForm" novalidate>
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+        <p class="field__err" id="f-name-err">Please tell us your name.</p>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="f-phone">Phone number</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="[0-9+()\s-]{8,}">
+          <p class="field__err" id="f-phone-err">We need a number we can reach you on.</p>
+        </div>
+        <div class="field">
+          <label for="f-email">Email address</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+          <p class="field__err" id="f-email-err">That email does not look right.</p>
+        </div>
+      </div>
+      <fieldset class="field">
+        <legend>I am a</legend>
+        <div class="pick">
+          <label><input type="radio" name="role" value="Parent" required><span>Parent</span></label>
+          <label><input type="radio" name="role" value="Educator / teacher"><span>Educator / teacher</span></label>
+          <label><input type="radio" name="role" value="School / institution"><span>School / institution</span></label>
+          <label><input type="radio" name="role" value="Counsellor / therapist"><span>Counsellor / therapist</span></label>
+          <label><input type="radio" name="role" value="Other"><span>Other</span></label>
+        </div>
+        <p class="field__err" id="f-role-err">Please pick one.</p>
+      </fieldset>
+      <div class="field">
+        <label for="f-interest">What are you interested in</label>
+        <select id="f-interest" name="interest" required>
+          <option value="">Choose an option</option>
+          <option value="kit">Buying the UNHEARD kit (₹1,200)</option>
+          <option value="webinar">Parent webinar (₹499)</option>
+          <option value="workshops">Workshops and boot camps</option>
+          <option value="school">School partnership</option>
+          <option value="series">Being a guest on the conversation series</option>
+          <option value="exploring">Just exploring</option>
+        </select>
+        <p class="field__err" id="f-interest-err">Please pick one.</p>
+      </div>
+      <div class="field">
+        <label for="f-msg">Message <small>optional</small></label>
+        <textarea id="f-msg" name="message" rows="5" placeholder="What have you noticed? What would help?"></textarea>
+      </div>
+      <button class="btn" type="submit">Prepare my message <span class="arrow" aria-hidden="true">→</span></button>
+      <p class="form__honest">This form is not connected to a server, so nothing is sent from this page. When it's filled in, we'll hand your message to your own email app to send. Or just phone.</p>
+
+      <div class="form__done" id="formDone" hidden tabindex="-1">
+        <h3>Your message is ready.</h3>
+        <p><strong>Nothing has been sent yet.</strong> Open it in your email app and press send, or call us and we'll take it from there.</p>
+        <div class="hero__cta">
+          <a class="btn" id="mailLink" href="mailto:unheard.corporation@gmail.com">Open in email app <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="tel:9958611717">Call 99586 11717</a>
+        </div>
+      </div>
+    </form>
+
+    <aside class="direct">
+      <div class="direct__card reveal">
+        <h2 class="display display--d2">Reach us directly</h2>
+        <dl>
+          <div><dt>Phone</dt><dd><a href="tel:9958611717">99586 11717</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:unheard.corporation@gmail.com">unheard.corporation@gmail.com</a></dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://instagram.com/unheardco" rel="noopener">@unheardco</a></dd></div>
+        </dl>
+        <p class="direct__reply"><strong>Reply time:</strong> usually within two working days. If it is urgent, phone rather than write. It is a small team and the phone is answered faster than the inbox.</p>
+      </div>
+      <div class="direct__series reveal">
+        <img src="assets/kids/whis.png" alt="" width="260" height="260">
+        <h3>The conversation series</h3>
+        <p>If you are a parent, educator or counsellor with a story worth hearing, we record short conversations on Zoom and share them. Pick that option in the form and we will send details.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ BEFORE YOU WRITE ============ -->
+<section class="sec sec--mist">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="tag">Before you write</span>
+        <h2 class="display display--d1">You don't have to<br>talk to us to start.</h2>
+      </div>
+    </div>
+    <div class="stages stages--3">
+      <article class="stage reveal" style="--fill:var(--sage)">
+        <span class="stage__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 10h12a4 4 0 0 1 4 4v26a3 3 0 0 0-3-3H8zM40 10H28a4 4 0 0 0-4 4v26a3 3 0 0 1 3-3h13z"/></svg></span>
+        <h3>The activities are free</h3>
+        <p>All {{activityCount}}, with every source linked. No sign-up and no email needed. If they are all you ever use, that is a good outcome.</p>
+        <a class="btn btn--ghost btn--sm" href="activities.html" style="margin-top:18px; align-self:flex-start">Open the library</a>
+      </article>
+      <article class="stage reveal" style="--fill:var(--butter)">
+        <span class="stage__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 6l16 6v12c0 10-7 16-16 18C15 40 8 34 8 24V12z"/><path d="M17 24l5 5 9-10"/></svg></span>
+        <h3>We'll say if we're wrong for you</h3>
+        <p>If what you describe needs a paediatrician, a psychologist or a special educator, we will tell you that rather than sell you a box.</p>
+      </article>
+      <article class="stage reveal" style="--fill:var(--lav-mid)">
+        <span class="stage__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="10" y="21" width="28" height="20" rx="4"/><path d="M16 21v-6a8 8 0 0 1 16 0v6"/></svg></span>
+        <h3>Nothing is shared</h3>
+        <p>What you write about your child stays between us. We do not publish it and we do not pass it on.</p>
+      </article>
+    </div>
+  </div>
+</section>

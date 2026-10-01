@@ -1,0 +1,109 @@
+<!--meta {"title": "Activity library — UNHEARD", "desc": "45 free activities for children aged 4–12, drawn from Montessori, Reggio Emilia, Singapore, Finland and Japan, adapted for Indian homes. Every one links to its source.", "nav": "activities"}-->
+
+<!-- ============ HERO ============ -->
+<section class="hero hero--page">
+  <div class="deco" style="left:-70px; top:10px; width:220px; height:460px; opacity:.85">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="{{tall}}" fill="var(--sage)"/></svg>
+  </div>
+  <div class="deco" style="right:-60px; top:-30px; width:280px; height:240px; opacity:.75">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="{{splat}}" fill="var(--blush)"/></svg>
+  </div>
+  <svg class="deco" style="right:14%; top:30%; width:48px; height:48px" aria-hidden="true"><use href="#sparkle" class="sparkle"/></svg>
+  <svg class="deco" style="right:10%; top:46%; width:20px; height:20px" aria-hidden="true"><use href="#sparkle" class="sparkle"/></svg>
+
+  <div class="wrap page-hero">
+    <span class="tag">Free, and not gated</span>
+    <h1 class="display display--d1 hero__title">{{activityCount}} activities, every one with its <span class="squiggle-under">source.<svg viewBox="0 0 104 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 12Q12 2 22 11T42 11T62 11T82 11T102 9"/></svg></span></h1>
+    <p class="lead">Drawn from five globally respected early-childhood models, adapted for Indian homes and everyday objects. No sign-up, no email, and you do not need the kit to use them.</p>
+    <div class="hero__meta">
+      <span class="tag">5 models</span>
+      <span class="tag">4 countries</span>
+      <span class="tag">Every source linked</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIBRARY ============ -->
+<section class="sec lib" id="library" style="padding-top:0">
+  <div class="wrap">
+    <div class="filters" id="filters">
+      <label class="search">
+        <span class="sr-only">Search activities</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input type="search" id="libSearch" placeholder="Search: pouring, counting, feelings…" autocomplete="off">
+      </label>
+      <div class="filters__row" role="group" aria-label="Filter by teaching model">
+        <span class="filters__label">Model</span>
+        {{modelChips}}
+      </div>
+      <div class="filters__row" role="group" aria-label="Filter by what it builds">
+        <span class="filters__label">Builds</span>
+        {{domainChips}}
+      </div>
+      <p class="filters__count" id="libCount" aria-live="polite">Showing all {{activityCount}} activities</p>
+    </div>
+
+    <div class="acts" id="acts">
+{{activities}}
+    </div>
+
+    <div class="empty" id="libEmpty" hidden>
+      <img src="assets/kids/recoome.png" alt="" width="260" height="260">
+      <h3>Nothing matches that, yet.</h3>
+      <p>Try a different word, or clear the filters.</p>
+      <button type="button" class="btn btn--sm" id="libReset">Clear filters</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOMAINS ============ -->
+<section class="sec" style="background:var(--lilac)" id="domains">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="tag">What the activities watch for</span>
+        <h2 class="display display--d1">Five things<br>to notice.</h2>
+      </div>
+      <p class="lead">Every activity is tagged by what it lets you see. It isn't a score. It's a place to look.</p>
+    </div>
+    <ul class="domains reveal">
+{{domainKey}}
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MODELS ============ -->
+<section class="sec" id="models">
+  <div class="deco" style="right:-60px; top:40px; width:180px; height:440px; opacity:.7">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="{{tall2}}" fill="var(--butter)"/></svg>
+  </div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="tag">Where they come from</span>
+        <h2 class="display display--d1">Five models,<br>none of them ours.</h2>
+      </div>
+      <p class="lead">Established early-childhood practice, adapted for Indian homes. Every activity links to its source so you can read past us.</p>
+    </div>
+    <div class="models">
+{{modelCards}}
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISCLAIMER + CTA ============ -->
+<section class="sec sec--mist">
+  <div class="wrap">
+    <div class="disclaimer reveal" style="margin-top:0">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="11"/><path d="M14 8.5v7M14 19.5v.01"/></svg>
+      <p><strong>These activities are for watching, not testing.</strong> No activity tells you what your child has. If something you notice worries you, take your notes to a paediatrician, a child psychologist or a special educator.</p>
+    </div>
+    <div class="band reveal">
+      <div>
+        <h2 class="display display--d2">Want the sheets to write it all down?</h2>
+        <p>The kit adds the observation checklist, the eight-week tracker and the activity guide that matches what you saw to what to try next.</p>
+      </div>
+      <a class="btn" href="kit.html">See the kit · ₹1,200 <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
